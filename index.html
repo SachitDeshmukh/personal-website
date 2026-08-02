@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home — Your Name</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,400..600&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header>
+    <div class="brand">A. Studio</div>
+    <div class="header-right">
+      <nav>
+        <a href="#">Writing</a>
+        <a href="#">Code</a>
+        <a href="#">Research</a>
+        <a href="#">Articles</a>
+        <a href="#">Social</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M12 3v1.5M12 19.5V21M4.22 4.22l1.06 1.06M18.72 18.72l1.06 1.06M3 12h1.5M19.5 12H21M4.22 19.78l1.06-1.06M18.72 5.28l1.06-1.06M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="eyebrow">Five diaries — one desk</div>
+    <h1>I write, build, and research<br>as a <span class="role serif" id="roleWord">writer</span>.</h1>
+    <p>Every part of my work keeps its own diary. This page shows the newest page from each — open any one to read it
+      from the start.</p>
+  </section>
+
+  <!-- ============ DIARIES ============ -->
+  <!--
+  Each .diary block below is one self-contained "diary" section.
+  To add or edit an entry: copy an .entry div and edit the date/title/text.
+  To add a new diary: copy an entire .diary block, give it a new
+  data-cat value, and add a matching color rule in css/style.css
+  under "PER-DIARY ACCENT COLORS".
+-->
+  <section class="diaries">
+
+    <div class="diary" data-cat="writing">
+      <div class="spine"></div>
+      <div class="diary-content">
+        <div class="diary-head">
+          <div class="diary-title">
+            <span class="diary-glyph serif">✦</span>
+            <h2>The Writing Diary</h2>
+          </div>
+          <a href="#" class="diary-open mono">OPEN DIARY <span>→</span></a>
+        </div>
+        <p class="diary-desc">Essays, drafts, and things I wrote mostly to figure out what I thought.</p>
+
+        <div class="entry">
+          <div class="entry-date mono">Jun 14</div>
+          <div class="entry-body">
+            <h3>On Keeping a Second Notebook</h3>
+            <p>Why the drafts I never publish end up shaping the ones I do.</p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-date mono">May 02</div>
+          <div class="entry-body">
+            <h3>A Year of Writing in the Morning</h3>
+            <p>What changed when I moved my writing hour before the inbox.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="diary" data-cat="code">
+      <div class="spine"></div>
+      <div class="diary-content">
+        <div class="diary-head">
+          <div class="diary-title">
+            <span class="diary-glyph serif">◈</span>
+            <h2>The Code Diary</h2>
+          </div>
+          <a href="#" class="diary-open mono">OPEN DIARY <span>→</span></a>
+        </div>
+        <p class="diary-desc">Small tools and projects, logged as I build and break them.</p>
+
+        <div class="entry">
+          <div class="entry-date mono">Jun 08</div>
+          <div class="entry-body">
+            <h3>ledger — a plain-text budgeting tool</h3>
+            <p>A command-line tool for tracking expenses in flat files, no database required.</p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-date mono">Feb 21</div>
+          <div class="entry-body">
+            <h3>fieldnotes — a research data cleaner</h3>
+            <p>Small Python package for cleaning messy survey exports before analysis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="diary" data-cat="research">
+      <div class="spine"></div>
+      <div class="diary-content">
+        <div class="diary-head">
+          <div class="diary-title">
+            <span class="diary-glyph serif">◉</span>
+            <h2>The Research Diary</h2>
+          </div>
+          <a href="#" class="diary-open mono">OPEN DIARY <span>→</span></a>
+        </div>
+        <p class="diary-desc">Working papers, findings, and the occasional dead end, documented anyway.</p>
+
+        <div class="entry">
+          <div class="entry-date mono">May 29</div>
+          <div class="entry-body">
+            <h3>Adaptive Feedback Loops in Small Classrooms</h3>
+            <p>Working paper on low-cost feedback interventions in under-resourced schools.</p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-date mono">Mar 11</div>
+          <div class="entry-body">
+            <h3>Why Most Pilot Studies Underpower Their Own Question</h3>
+            <p>A short methods note on sample size decisions I got wrong once.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="diary" data-cat="articles">
+      <div class="spine"></div>
+      <div class="diary-content">
+        <div class="diary-head">
+          <div class="diary-title">
+            <span class="diary-glyph serif">▸</span>
+            <h2>The Published Diary</h2>
+          </div>
+          <a href="#" class="diary-open mono">OPEN DIARY <span>→</span></a>
+        </div>
+        <p class="diary-desc">Professional and freelance articles that made it out into the world.</p>
+
+        <div class="entry">
+          <div class="entry-date mono">Apr 19</div>
+          <div class="entry-body">
+            <h3>What Editors Actually Want From a Pitch</h3>
+            <p>Notes from three years of freelance science writing, and the emails that worked.</p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-date mono">Jan 06</div>
+          <div class="entry-body">
+            <h3>The Slow Death of the 800-Word Explainer</h3>
+            <p>A short case for longer, slower feature writing in a skimmable web.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="diary" data-cat="social">
+      <div class="spine"></div>
+      <div class="diary-content">
+        <div class="diary-head">
+          <div class="diary-title">
+            <span class="diary-glyph serif">✧</span>
+            <h2>The Community Diary</h2>
+          </div>
+          <a href="#" class="diary-open mono">OPEN DIARY <span>→</span></a>
+        </div>
+        <p class="diary-desc">Volunteer work and local projects, kept honest with dates and receipts.</p>
+
+        <div class="entry">
+          <div class="entry-date mono">Mar 30</div>
+          <div class="entry-body">
+            <h3>Neighborhood Library Rebuild — Year One</h3>
+            <p>A volunteer effort to reopen a closed community library, from funding to first shelf.</p>
+          </div>
+        </div>
+        <div class="entry">
+          <div class="entry-date mono">Dec 15</div>
+          <div class="entry-body">
+            <h3>What 40 Weekend Volunteers Taught Me About Asking for Help</h3>
+            <p>Logistics notes from organizing a winter donation drive.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer>
+    <div>© 2026 — kept by hand</div>
+    <div class="links">
+      <a href="#">Email</a>
+      <a href="#">GitHub</a>
+      <a href="#">Scholar</a>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

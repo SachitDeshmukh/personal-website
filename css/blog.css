@@ -1,0 +1,163 @@
+/* =====================================================================
+   DESIGN TOKENS
+   Change these variables to re-theme the entire site.
+   Light mode values live in :root, dark mode overrides live in html.dark
+   ===================================================================== */
+
+:root {
+    /* Colors: light Mode */
+    --paper: #FAF6EE;
+    --paper2: #F2EBDA;
+    --ink: #2B2620;
+    --soft: #5C5347;
+    --accent: #B14A26;
+    --rule: #E1D6C1;
+}
+
+html.dark {
+    /* Colors: dark more */
+    --paper: #1C1814;
+    --paper2: #26211B;
+    --ink: #ECE3D3;
+    --soft: #B5A996;
+    --rule: #382F26;
+}
+
+/* =====================================================================
+   BASE / RESET
+   ===================================================================== */
+
+* {
+    box-sizing: border-box
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    line-height: 1.8
+}
+
+.site-header,
+.site-footer {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem
+}
+
+
+nav a {
+    text-decoration: none;
+    color: var(--soft)
+}
+
+.article {
+    max-width: 760px;
+    margin: auto;
+    padding: 2rem
+}
+
+.brand,
+h1,
+h2,
+h3 {
+    font-family: 'Fraunces', serif
+}
+
+h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+    margin-bottom: .5rem
+}
+
+.subtitle,
+.meta,
+.breadcrumb,
+.citation,
+figcaption {
+    color: var(--soft)
+}
+
+.meta {
+    display: flex;
+    gap: .75rem;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: .85rem
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--rule);
+    margin: 2.5rem 0
+}
+
+.article-quote {
+    border-left: 4px solid var(--accent);
+    padding-left: 1.5rem;
+    font-style: italic;
+    margin: 2rem 0
+}
+
+.callout {
+    background: var(--paper2);
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    margin: 2rem 0
+}
+
+.placeholder {
+    height: 320px;
+    border: 2px dashed var(--rule);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--soft)
+}
+
+figure {
+    margin: 2rem 0
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0
+}
+
+th,
+td {
+    padding: .75rem;
+    border-bottom: 1px solid var(--rule);
+    text-align: left
+}
+
+pre {
+    background: #1f1f1f;
+    color: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow: auto
+}
+
+code {
+    font-family: 'IBM Plex Mono', monospace
+}
+
+.related ul {
+    list-style: none;
+    padding: 0
+}
+
+.related li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--rule)
+}
