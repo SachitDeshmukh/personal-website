@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home — Your Name</title>
+  <title>Home - Sachit Deshmukh</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -19,13 +19,13 @@
 
   <!-- ============ HEADER ============ -->
   <header>
-    <div class="brand">A. Studio</div>
+    <a href="../index.html" class="brand">Sachit Deshmukh</a>
     <div class="header-right">
       <nav>
-        <a href="#">Writing</a>
-        <a href="#">Code</a>
+        <a href="#">Creative</a>
+        <a href="#">Programming</a>
         <a href="#">Research</a>
-        <a href="#">Articles</a>
+        <a href="#">Blogs</a>
         <a href="#">Social</a>
       </nav>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
@@ -40,7 +40,7 @@
   <!-- ============ HERO ============ -->
   <section class="hero">
     <div class="eyebrow">Five diaries — one desk</div>
-    <h1>I write, build, and research<br>as a <span class="role serif" id="roleWord">writer</span>.</h1>
+    <h1>I explore the world around me<br>as a <span class="role serif" id="roleWord">writer</span>.</h1>
     <p>Every part of my work keeps its own diary. This page shows the newest page from each — open any one to read it
       from the start.</p>
   </section>
@@ -49,38 +49,53 @@
   <!--
   Each .diary block below is one self-contained "diary" section.
   To add or edit an entry: copy an .entry div and edit the date/title/text.
+
+  <a href="#" class="entry-link">
+    <div class="entry">
+      <div class="entry-date mono">MMM DD</div>
+      <div class="entry-body">
+        <h3>HEADING OF ENTRY</h3>
+        <p>Subheading for the entry</p>
+      </div>
+    </div>
+  </a>
+
   To add a new diary: copy an entire .diary block, give it a new
   data-cat value, and add a matching color rule in css/style.css
   under "PER-DIARY ACCENT COLORS".
 -->
   <section class="diaries">
 
-    <div class="diary" data-cat="writing">
+    <div class="diary" data-cat="creative">
       <div class="spine"></div>
       <div class="diary-content">
         <div class="diary-head">
           <div class="diary-title">
             <span class="diary-glyph serif">✦</span>
-            <h2>The Writing Diary</h2>
+            <h2>The Creative Diary</h2>
           </div>
           <a href="#" class="diary-open mono">OPEN DIARY <span>→</span></a>
         </div>
-        <p class="diary-desc">Essays, drafts, and things I wrote mostly to figure out what I thought.</p>
+        <p class="diary-desc">Stories that come to mind, taking inspiration from what I read.</p>
 
-        <div class="entry">
-          <div class="entry-date mono">Jun 14</div>
-          <div class="entry-body">
-            <h3>On Keeping a Second Notebook</h3>
-            <p>Why the drafts I never publish end up shaping the ones I do.</p>
+        <a href="blog_template/blog.html" class="entry-link">
+          <div class="entry">
+            <div class="entry-date mono">MMM DD</div>
+            <div class="entry-body">
+              <h3>Diary Entry coming out soon!</h3>
+              <p>I will be publishing the diary entry on the website soon. Stay tuned!</p>
+            </div>
           </div>
-        </div>
-        <div class="entry">
-          <div class="entry-date mono">May 02</div>
-          <div class="entry-body">
-            <h3>A Year of Writing in the Morning</h3>
-            <p>What changed when I moved my writing hour before the inbox.</p>
+        </a>
+        <a href="blog_template/blog.html" class="entry-link">
+          <div class="entry">
+            <div class="entry-date mono">MMM DD</div>
+            <div class="entry-body">
+              <h3>Diary Entry coming out soon!</h3>
+              <p>I will be publishing the diary entry on the website soon. Stay tuned!</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -90,26 +105,30 @@
         <div class="diary-head">
           <div class="diary-title">
             <span class="diary-glyph serif">◈</span>
-            <h2>The Code Diary</h2>
+            <h2>The Programming Diary</h2>
           </div>
           <a href="#" class="diary-open mono">OPEN DIARY <span>→</span></a>
         </div>
         <p class="diary-desc">Small tools and projects, logged as I build and break them.</p>
 
-        <div class="entry">
-          <div class="entry-date mono">Jun 08</div>
-          <div class="entry-body">
-            <h3>ledger — a plain-text budgeting tool</h3>
-            <p>A command-line tool for tracking expenses in flat files, no database required.</p>
+        <a href="blog_template/blog.html" class="entry-link">
+          <div class="entry">
+            <div class="entry-date mono">MMM DD</div>
+            <div class="entry-body">
+              <h3>Diary Entry coming out soon!</h3>
+              <p>I will be publishing the diary entry on the website soon. Stay tuned!</p>
+            </div>
           </div>
-        </div>
-        <div class="entry">
-          <div class="entry-date mono">Feb 21</div>
-          <div class="entry-body">
-            <h3>fieldnotes — a research data cleaner</h3>
-            <p>Small Python package for cleaning messy survey exports before analysis.</p>
+        </a>
+        <a href="blog_template/blog.html" class="entry-link">
+          <div class="entry">
+            <div class="entry-date mono">MMM DD</div>
+            <div class="entry-body">
+              <h3>Diary Entry coming out soon!</h3>
+              <p>I will be publishing the diary entry on the website soon. Stay tuned!</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -125,20 +144,24 @@
         </div>
         <p class="diary-desc">Working papers, findings, and the occasional dead end, documented anyway.</p>
 
-        <div class="entry">
-          <div class="entry-date mono">May 29</div>
-          <div class="entry-body">
-            <h3>Adaptive Feedback Loops in Small Classrooms</h3>
-            <p>Working paper on low-cost feedback interventions in under-resourced schools.</p>
+        <a href="blog_template/blog.html" class="entry-link">
+          <div class="entry">
+            <div class="entry-date mono">MMM DD</div>
+            <div class="entry-body">
+              <h3>Diary Entry coming out soon!</h3>
+              <p>I will be publishing the diary entry on the website soon. Stay tuned!</p>
+            </div>
           </div>
-        </div>
-        <div class="entry">
-          <div class="entry-date mono">Mar 11</div>
-          <div class="entry-body">
-            <h3>Why Most Pilot Studies Underpower Their Own Question</h3>
-            <p>A short methods note on sample size decisions I got wrong once.</p>
+        </a>
+        <a href="blog_template/blog.html" class="entry-link">
+          <div class="entry">
+            <div class="entry-date mono">MMM DD</div>
+            <div class="entry-body">
+              <h3>Diary Entry coming out soon!</h3>
+              <p>I will be publishing the diary entry on the website soon. Stay tuned!</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -148,26 +171,30 @@
         <div class="diary-head">
           <div class="diary-title">
             <span class="diary-glyph serif">▸</span>
-            <h2>The Published Diary</h2>
+            <h2>The Blogging Diary</h2>
           </div>
           <a href="#" class="diary-open mono">OPEN DIARY <span>→</span></a>
         </div>
         <p class="diary-desc">Professional and freelance articles that made it out into the world.</p>
 
-        <div class="entry">
-          <div class="entry-date mono">Apr 19</div>
-          <div class="entry-body">
-            <h3>What Editors Actually Want From a Pitch</h3>
-            <p>Notes from three years of freelance science writing, and the emails that worked.</p>
+        <a href="blog_template/blog.html" class="entry-link">
+          <div class="entry">
+            <div class="entry-date mono">MMM DD</div>
+            <div class="entry-body">
+              <h3>Diary Entry coming out soon!</h3>
+              <p>I will be publishing the diary entry on the website soon. Stay tuned!</p>
+            </div>
           </div>
-        </div>
-        <div class="entry">
-          <div class="entry-date mono">Jan 06</div>
-          <div class="entry-body">
-            <h3>The Slow Death of the 800-Word Explainer</h3>
-            <p>A short case for longer, slower feature writing in a skimmable web.</p>
+        </a>
+        <a href="blog_template/blog.html" class="entry-link">
+          <div class="entry">
+            <div class="entry-date mono">MMM DD</div>
+            <div class="entry-body">
+              <h3>Diary Entry coming out soon!</h3>
+              <p>I will be publishing the diary entry on the website soon. Stay tuned!</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -177,26 +204,30 @@
         <div class="diary-head">
           <div class="diary-title">
             <span class="diary-glyph serif">✧</span>
-            <h2>The Community Diary</h2>
+            <h2>The Social Diary</h2>
           </div>
           <a href="#" class="diary-open mono">OPEN DIARY <span>→</span></a>
         </div>
-        <p class="diary-desc">Volunteer work and local projects, kept honest with dates and receipts.</p>
+        <p class="diary-desc">My social life, better presented than social media platforms.</p>
 
-        <div class="entry">
-          <div class="entry-date mono">Mar 30</div>
-          <div class="entry-body">
-            <h3>Neighborhood Library Rebuild — Year One</h3>
-            <p>A volunteer effort to reopen a closed community library, from funding to first shelf.</p>
+        <a href="blog_template/blog.html" class="entry-link">
+          <div class="entry">
+            <div class="entry-date mono">MMM DD</div>
+            <div class="entry-body">
+              <h3>Diary Entry coming out soon!</h3>
+              <p>I will be publishing the diary entry on the website soon. Stay tuned!</p>
+            </div>
           </div>
-        </div>
-        <div class="entry">
-          <div class="entry-date mono">Dec 15</div>
-          <div class="entry-body">
-            <h3>What 40 Weekend Volunteers Taught Me About Asking for Help</h3>
-            <p>Logistics notes from organizing a winter donation drive.</p>
+        </a>
+        <a href="blog_template/blog.html" class="entry-link">
+          <div class="entry">
+            <div class="entry-date mono">MMM DD</div>
+            <div class="entry-body">
+              <h3>Diary Entry coming out soon!</h3>
+              <p>I will be publishing the diary entry on the website soon. Stay tuned!</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </div>
 
@@ -206,9 +237,8 @@
   <footer>
     <div>© 2026 — kept by hand</div>
     <div class="links">
-      <a href="#">Email</a>
-      <a href="#">GitHub</a>
-      <a href="#">Scholar</a>
+      <a href="mailto:sachit1deshmukh@gmail.com">Email</a>
+      <a href="https://github.com/SachitDeshmukh">GitHub</a>
     </div>
   </footer>
 

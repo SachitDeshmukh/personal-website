@@ -14,26 +14,37 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <div class="brand">A. Studio</div>
-        <nav>
-            <a href="#">Writing</a><a href="#">Code</a><a href="#">Research</a><a href="#">Articles</a><a
-                href="#">Social</a>
-        </nav>
-        <button id="themeToggle">☼</button>
+    <!-- ============ HEADER ============ -->
+    <header>
+        <a href="../index.html" class="brand">Sachit Deshmukh</a>
+        <div class="header-right">
+            <nav>
+                <a href="#">Creative</a>
+                <a href="#">Programming</a>
+                <a href="#">Research</a>
+                <a href="#">Blogs</a>
+                <a href="#">Social</a>
+            </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 3v1.5M12 19.5V21M4.22 4.22l1.06 1.06M18.72 18.72l1.06 1.06M3 12h1.5M19.5 12H21M4.22 19.78l1.06-1.06M18.72 5.28l1.06-1.06M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" />
+                </svg>
+            </button>
+        </div>
     </header>
 
     <main class="article">
-        <div class="breadcrumb">Research / Development Economics</div>
-        <h1>Designing Better Evidence for Public Policy</h1>
-        <p class="subtitle">A placeholder subtitle introducing the article in one concise sentence.</p>
+        <div class="breadcrumb">Diary Category</div>
+        <h1>A Placeholder Title for the Diary Entry</h1>
+        <p class="subtitle">A placeholder subtitle introducing the entry in one concise sentence.</p>
 
         <div class="meta">
-            <span>01 August 2026</span>
+            <span>DD MONTH YYYY</span>
             <span>•</span>
             <span>Sachit Deshmukh</span>
             <span>•</span>
-            <span>8 min read</span>
+            <span>X min read</span>
         </div>
 
         <hr>
@@ -85,9 +96,9 @@
             </table>
 
             <pre><code># Python example
-def hello():
-    print("Hello World")
-</code></pre>
+            def hello():
+                print("Hello World")
+            </code></pre>
 
             <p class="citation">[1] Placeholder citation in APA style.</p>
         </section>
@@ -95,17 +106,21 @@ def hello():
         <hr>
 
         <section class="related">
-            <h2>Similar Articles</h2>
+            <h2>Similar Entries</h2>
             <ul>
-                <li><strong>Understanding Randomized Evaluations</strong><br><small>A short description.</small></li>
-                <li><strong>Institutional Memory in Government</strong><br><small>A short description.</small></li>
-                <li><strong>Why Pilot Studies Matter</strong><br><small>A short description.</small></li>
+                <li><strong>Entry #1 Title</strong><br><small>A short description.</small></li>
+                <li><strong>Entry #2 Title</strong><br><small>A short description.</small></li>
+                <li><strong>Entry #3 Title</strong><br><small>A short description.</small></li>
             </ul>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <p>© 2026 — kept by hand</p>
+    <footer>
+        <div>© 2026 — kept by hand</div>
+        <div class="links">
+            <a href="mailto:sachit1deshmukh@gmail.com">Email</a>
+            <a href="https://github.com/SachitDeshmukh">GitHub</a>
+        </div>
     </footer>
 
     <script src="../js/blog.js"></script>

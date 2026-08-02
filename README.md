@@ -3,13 +3,18 @@
 ```
 personal-site/
 ├── index.html      → homepage markup and content (the diary entries)
+├── blog_template/
+│   └── blog.html   → placeholder template for individual blog entries
 ├── css/
 │   └── style.css   → all styling, colors, fonts, spacing
+│   └── blog.css    → all styling for individual blog entries
 └── js/
     └── main.js     → theme toggle + hero word animation
+    └── blog.js     → ibid for individual blog entries
 ```
 
 ## How to preview it
+
 Open `index.html` directly in a browser, or run a tiny local server from
 this folder (recommended, avoids some browser file-loading quirks):
 
@@ -20,6 +25,7 @@ python3 -m http.server 8000
 Then visit `http://localhost:8000`.
 
 ## Editing content (text, entries, links)
+
 All content lives in `index.html`.
 
 - **To edit an entry**: find its `<div class="entry">` block and change
@@ -35,6 +41,7 @@ All content lives in `index.html`.
   `<footer>` sections near the top and bottom of `index.html`.
 
 ## Editing the theme (colors, fonts, spacing)
+
 All visual styling lives in `css/style.css`, and the file is organized
 into labeled sections in this order: tokens, base, header, hero,
 diaries, footer, responsive.
@@ -56,6 +63,7 @@ diaries, footer, responsive.
   values in each section of `style.css`.
 
 ## Editing behavior
+
 `js/main.js` has two small, independent pieces:
 
 - Theme toggle (click handler on the sun/moon button)
@@ -64,6 +72,7 @@ diaries, footer, responsive.
 Both are short and commented — safe to edit directly.
 
 ## Adding new pages
+
 Right now `index.html` is the homepage only. Each diary's "OPEN DIARY"
 link currently points to `#`. When you're ready to build a dedicated
 page per diary (e.g. `writing.html`), copy `index.html` as a starting

@@ -315,6 +315,12 @@ nav a:hover::after {
 
 /* -- individual entries within a diary -- */
 
+.entry-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 .entry {
   display: grid;
   grid-template-columns: 90px 1fr;
@@ -361,11 +367,11 @@ nav a:hover::after {
    To add a new diary category, add a matching pair of rules here
    using the same data-cat value you give the .diary div in index.html. */
 
-.diary[data-cat="writing"] .spine {
+.diary[data-cat="creative"] .spine {
   background: var(--terracotta);
 }
 
-.diary[data-cat="writing"] .entry {
+.diary[data-cat="creative"] .entry {
   --accent: var(--terracotta);
 }
 
