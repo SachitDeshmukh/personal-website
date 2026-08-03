@@ -5,14 +5,27 @@
    All colors respond automatically via the CSS variables in style.css.
    ===================================================================== */
 
+// ---------- Theme Toggle ----------
+const themeToggle = document.getElementById("themeToggle");
 const root = document.documentElement;
-const themeToggle = document.getElementById('themeToggle');
 
-if (themeToggle) {
-  themeToggle.addEventListener('click', () => {
-    root.classList.toggle('dark');
-  });
+// Load previously selected theme
+const savedTheme = localStorage.getItem("theme");
+
+if (savedTheme === "dark") {
+  root.classList.add("dark");
 }
+
+// Toggle theme
+themeToggle.addEventListener("click", () => {
+  root.classList.toggle("dark");
+
+  if (root.classList.contains("dark")) {
+    localStorage.setItem("theme", "dark");
+  } else {
+    localStorage.setItem("theme", "light");
+  }
+});
 
 /* =====================================================================
    HERO ROLE WORD
@@ -20,8 +33,8 @@ if (themeToggle) {
    Edit the "roles" array below to change the words or their order.
    ===================================================================== */
 
-const roles = ['writer', 'developer', 'researcher', 'organizer'];
-const roleEl = document.getElementById('roleWord');
+const roles = ["writer", "developer", "researcher", "organizer"];
+const roleEl = document.getElementById("roleWord");
 let roleIndex = 0;
 
 if (roleEl) {
@@ -29,12 +42,12 @@ if (roleEl) {
     roleIndex = (roleIndex + 1) % roles.length;
 
     roleEl.style.opacity = 0;
-    roleEl.style.transform = 'translateY(6px)';
+    roleEl.style.transform = "translateY(6px)";
 
     setTimeout(() => {
       roleEl.textContent = roles[roleIndex];
       roleEl.style.opacity = 1;
-      roleEl.style.transform = 'translateY(0)';
+      roleEl.style.transform = "translateY(0)";
     }, 300);
   }, 2600);
 }
