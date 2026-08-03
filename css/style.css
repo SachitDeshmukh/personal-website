@@ -6,27 +6,27 @@
 
 :root {
   /* -- Colors: light mode -- */
-  --paper: #FAF6EE;
+  --paper: #fbfbf6;
   /* page background */
-  --paper-raised: #F2EBDA;
+  --paper-raised: #e6eae8;
   /* card/hover background */
-  --ink: #2B2620;
+  --ink: #02403d;
   /* primary text */
-  --ink-soft: #5C5347;
+  --ink-soft: #485150;
   /* secondary text */
-  --rule: #E1D6C1;
+  --rule: #d0d7d3;
   /* dividers, borders */
 
   /* -- Diary accent colors (one per category) -- */
-  --terracotta: #B14A26;
+  --deep-ocean: #04726d;
   /* Writing */
-  --olive: #6B7156;
+  --sky-blue-light: #2d8495;
   /* Code */
-  --umber: #8B5E3C;
+  --ash-grey: #4e6a5a;
   /* Research */
-  --rose: #A85C56;
+  --blush-rose: #e4255a;
   /* Articles */
-  --gold: #B8863B;
+  --olive-gold: #7d8721;
   /* Social */
 
   /* -- Motion -- */
@@ -35,17 +35,17 @@
 
 html.dark {
   /* -- Colors: dark mode -- */
-  --paper: #1C1814;
-  --paper-raised: #26211B;
-  --ink: #ECE3D3;
-  --ink-soft: #B5A996;
-  --rule: #382F26;
+  --paper: #0b2120;
+  --paper-raised: #12312f;
+  --ink: #f1f2e9;
+  --ink-soft: #a9b2b2;
+  --rule: #1f4c4a;
 
-  --terracotta: #E08355;
-  --olive: #9AA37D;
-  --umber: #C99266;
-  --rose: #D08782;
-  --gold: #D9A85D;
+  --deep-ocean: #48f4ec;
+  --sky-blue-light: #7ec4d2;
+  --ash-grey: #b0bfb6;
+  --blush-rose: #e87d9b;
+  --olive-gold: #dde689;
 }
 
 /* =====================================================================
@@ -60,8 +60,10 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: 'Work Sans', sans-serif;
-  transition: background var(--transition), color var(--transition);
+  font-family: "Work Sans", sans-serif;
+  transition:
+    background var(--transition),
+    color var(--transition);
   -webkit-font-smoothing: antialiased;
 }
 
@@ -71,15 +73,15 @@ a {
 }
 
 .serif {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
 }
 
 .mono {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 :focus-visible {
-  outline: 2px solid var(--terracotta);
+  outline: 2px solid var(--deep-ocean);
   outline-offset: 2px;
 }
 
@@ -103,7 +105,7 @@ header {
 }
 
 .brand {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
   font-weight: 500;
   font-size: 1.35rem;
   letter-spacing: -0.01em;
@@ -122,17 +124,17 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--terracotta);
+  color: var(--blush-rose);
 }
 
 nav a::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -4px;
   width: 0;
   height: 1px;
-  background: var(--terracotta);
+  background: var(--blush-rose);
   transition: width var(--transition);
 }
 
@@ -156,7 +158,9 @@ nav a:hover::after {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: background var(--transition), transform 300ms ease;
+  transition:
+    background var(--transition),
+    transform 300ms ease;
 }
 
 .theme-toggle:hover {
@@ -180,11 +184,11 @@ nav a:hover::after {
 }
 
 .eyebrow {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--olive);
+  color: var(--blush-rose);
   margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
@@ -192,14 +196,14 @@ nav a:hover::after {
 }
 
 .eyebrow::before {
-  content: '';
+  content: "";
   width: 22px;
   height: 1px;
-  background: var(--olive);
+  background: var(--blush-rose);
 }
 
 .hero h1 {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
   font-weight: 400;
   font-size: 3rem;
   line-height: 1.15;
@@ -209,9 +213,11 @@ nav a:hover::after {
 
 .hero h1 .role {
   font-style: italic;
-  color: var(--terracotta);
+  color: var(--blush-rose);
   display: inline-block;
-  transition: opacity 500ms ease, transform 500ms ease;
+  transition:
+    opacity 500ms ease,
+    transform 500ms ease;
 }
 
 .hero p {
@@ -273,7 +279,7 @@ nav a:hover::after {
 }
 
 .diary-title h2 {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
   font-style: italic;
   font-weight: 500;
   font-size: 1.6rem;
@@ -282,7 +288,7 @@ nav a:hover::after {
 }
 
 .diary-open {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   color: var(--ink-soft);
@@ -336,14 +342,14 @@ nav a:hover::after {
 }
 
 .entry-date {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: "IBM Plex Mono", monospace;
   font-size: 0.72rem;
   color: var(--ink-soft);
   padding-top: 0.2rem;
 }
 
 .entry-body h3 {
-  font-family: 'Fraunces', serif;
+  font-family: "Fraunces", serif;
   font-weight: 500;
   font-size: 1.1rem;
   margin: 0 0 0.3rem;
@@ -352,7 +358,7 @@ nav a:hover::after {
 }
 
 .entry:hover .entry-body h3 {
-  color: var(--accent, var(--terracotta));
+  color: var(--accent, var(--deep-ocean));
 }
 
 .entry-body p {
@@ -368,43 +374,48 @@ nav a:hover::after {
    using the same data-cat value you give the .diary div in index.html. */
 
 .diary[data-cat="creative"] .spine {
-  background: var(--terracotta);
+  background: var(--deep-ocean);
+  width: 5px;
 }
 
 .diary[data-cat="creative"] .entry {
-  --accent: var(--terracotta);
+  --accent: var(--deep-ocean);
 }
 
 .diary[data-cat="code"] .spine {
-  background: var(--olive);
+  background: var(--sky-blue-light);
+  width: 5px;
 }
 
 .diary[data-cat="code"] .entry {
-  --accent: var(--olive);
+  --accent: var(--sky-blue-light);
 }
 
 .diary[data-cat="research"] .spine {
-  background: var(--umber);
+  background: var(--ash-grey);
+  width: 5px;
 }
 
 .diary[data-cat="research"] .entry {
-  --accent: var(--umber);
+  --accent: var(--ash-grey);
 }
 
 .diary[data-cat="articles"] .spine {
-  background: var(--rose);
+  background: var(--blush-rose);
+  width: 5px;
 }
 
 .diary[data-cat="articles"] .entry {
-  --accent: var(--rose);
+  --accent: var(--blush-rose);
 }
 
 .diary[data-cat="social"] .spine {
-  background: var(--gold);
+  background: var(--olive-gold);
+  width: 5px;
 }
 
 .diary[data-cat="social"] .entry {
-  --accent: var(--gold);
+  --accent: var(--olive-gold);
 }
 
 /* =====================================================================
@@ -428,7 +439,7 @@ footer .links {
 }
 
 footer a:hover {
-  color: var(--terracotta);
+  color: var(--deep-ocean);
 }
 
 /* =====================================================================
