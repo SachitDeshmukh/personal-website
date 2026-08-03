@@ -251,6 +251,30 @@ code {
     border-bottom: 1px solid var(--rule)
 }
 
+/* -- per-diary accent colors --
+   To add a new diary category, add a matching pair of rules here
+   using the same data-cat value you give the .diary div in index.html. */
+
+.article[data-cat="creative"] {
+    --accent: var(--deep-ocean)
+}
+
+.article[data-cat="code"] {
+    --accent: var(--sky-blue-light)
+}
+
+.article[data-cat="research"] {
+    --accent: var(--ash-grey)
+}
+
+.article[data-cat="articles"] {
+    --accent: var(--blush-rose)
+}
+
+.article[data-cat="social"] {
+    --accent: var(--olive-gold)
+}
+
 /* =====================================================================
    FOOTER
    ===================================================================== */
