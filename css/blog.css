@@ -5,23 +5,47 @@
    ===================================================================== */
 
 :root {
-    /* Colors: light Mode */
-    --paper: #FAF6EE;
-    --paper2: #F2EBDA;
-    --ink: #2B2620;
-    --soft: #5C5347;
-    --accent: #B14A26;
-    --rule: #E1D6C1;
+    /* -- Colors: light mode -- */
+    --paper: #FBFBF6;
+    /* page background */
+    --paper-raised: #E6EAE8;
+    /* card/hover background */
+    --ink: #02403D;
+    /* primary text */
+    --ink-soft: #485150;
+    /* secondary text */
+    --rule: #D0D7D3;
+    /* dividers, borders */
+
+    /* -- Diary accent colors (one per category) -- */
+    --deep-ocean: #04726D;
+    /* Writing */
+    --sky-blue-light: #2D8495;
+    /* Code */
+    --ash-grey: #4E6A5A;
+    /* Research */
+    --blush-rose: #E4255A;
+    /* Articles */
+    --olive-gold: #7D8721;
+    /* Social */
+
+    /* -- Motion -- */
     --transition: 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 html.dark {
-    /* Colors: dark more */
-    --paper: #1C1814;
-    --paper2: #26211B;
-    --ink: #ECE3D3;
-    --soft: #B5A996;
-    --rule: #382F26;
+    /* -- Colors: dark mode -- */
+    --paper: #0B2120;
+    --paper-raised: #12312F;
+    --ink: #F1F2E9;
+    --ink-soft: #A9B2B2;
+    --rule: #1F4C4A;
+
+    --deep-ocean: #48F4EC;
+    --sky-blue-light: #7EC4D2;
+    --ash-grey: #B0BFB6;
+    --blush-rose: #E87D9B;
+    --olive-gold: #DDE689;
 }
 
 /* =====================================================================
@@ -69,7 +93,7 @@ header {
     height: 38px;
     border-radius: 50%;
     border: 1px solid var(--rule);
-    background: var(--paper2);
+    background: var(--paper-raised);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,7 +124,7 @@ nav a {
 }
 
 nav a:hover {
-    color: var(--accent);
+    color: var(--blush-rose);
 }
 
 nav a::after {
@@ -110,13 +134,17 @@ nav a::after {
     bottom: -4px;
     width: 0;
     height: 1px;
-    background: var(--accent);
+    background: var(--blush-rose);
     transition: width var(--transition);
 }
 
 nav a:hover::after {
     width: 100%;
 }
+
+/* =====================================================================
+   ARTICLE BODY
+   ===================================================================== */
 
 .article {
     max-width: 760px;
@@ -148,7 +176,7 @@ h1 {
 .breadcrumb,
 .citation,
 figcaption {
-    color: var(--soft)
+    color: var(--ink-soft)
 }
 
 .meta {
@@ -165,14 +193,15 @@ hr {
 }
 
 .article-quote {
-    border-left: 4px solid var(--accent);
+    border-left: 4px solid var(--accent, var(--ash-grey));
     padding-left: 1.5rem;
     font-style: italic;
     margin: 2rem 0
 }
 
 .callout {
-    background: var(--paper2);
+    background: var(--accent, var(--ash-grey));
+    color: var(--paper-raised);
     padding: 1rem 1.2rem;
     border-radius: 8px;
     margin: 2rem 0
@@ -184,7 +213,11 @@ hr {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--soft)
+    color: var(--ink-soft)
+}
+
+.right-text {
+    text-align: right;
 }
 
 figure {
@@ -205,8 +238,8 @@ td {
 }
 
 pre {
-    background: #1f1f1f;
-    color: #f5f5f5;
+    background: var(--ink);
+    color: var(--paper);
     padding: 1rem;
     border-radius: 8px;
     overflow: auto
@@ -224,6 +257,30 @@ code {
 .related li {
     padding: 1rem 0;
     border-bottom: 1px solid var(--rule)
+}
+
+/* -- per-diary accent colors --
+   To add a new diary category, add a matching pair of rules here
+   using the same data-cat value you give the .diary div in index.html. */
+
+.article[data-cat="creative"] {
+    --accent: var(--deep-ocean)
+}
+
+.article[data-cat="code"] {
+    --accent: var(--sky-blue-light)
+}
+
+.article[data-cat="research"] {
+    --accent: var(--ash-grey)
+}
+
+.article[data-cat="articles"] {
+    --accent: var(--blush-rose)
+}
+
+.article[data-cat="social"] {
+    --accent: var(--olive-gold)
 }
 
 /* =====================================================================
@@ -247,5 +304,5 @@ footer .links {
 }
 
 footer a:hover {
-    color: var(--accent);
+    color: var(--blush-rose);
 }
