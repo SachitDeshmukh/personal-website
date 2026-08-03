@@ -338,7 +338,8 @@ nav a:hover::after {
 }
 
 .entry:hover {
-  padding-left: 0.5rem;
+  padding-left: 1rem;
+  background-image: linear-gradient(to left, var(--accent), var(--paper) 25%);
 }
 
 .entry-date {
