@@ -216,6 +216,10 @@ hr {
     color: var(--ink-soft)
 }
 
+.right-text {
+    text-align: right;
+}
+
 figure {
     margin: 2rem 0
 }
