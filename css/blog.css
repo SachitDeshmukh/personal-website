@@ -189,14 +189,15 @@ hr {
 }
 
 .article-quote {
-    border-left: 4px solid var(--blush-rose);
+    border-left: 4px solid var(--accent, var(--ash-grey));
     padding-left: 1.5rem;
     font-style: italic;
     margin: 2rem 0
 }
 
 .callout {
-    background: var(--paper-raised);
+    background: var(--accent, var(--ash-grey));
+    color: var(--paper-raised);
     padding: 1rem 1.2rem;
     border-radius: 8px;
     margin: 2rem 0
@@ -229,8 +230,8 @@ td {
 }
 
 pre {
-    background: #1f1f1f;
-    color: #f5f5f5;
+    background: var(--ink);
+    color: var(--paper);
     padding: 1rem;
     border-radius: 8px;
     overflow: auto
