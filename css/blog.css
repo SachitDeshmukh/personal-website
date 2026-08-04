@@ -306,3 +306,35 @@ footer .links {
 footer a:hover {
     color: var(--blush-rose);
 }
+
+/* =====================================================================
+   RESPONSIVE
+   ===================================================================== */
+
+@media (max-width: 680px) {
+
+    header,
+    .hero,
+    .diaries,
+    footer {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 2.1rem;
+    }
+
+    .diary {
+        gap: 1.25rem;
+    }
+
+    .entry {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+}
