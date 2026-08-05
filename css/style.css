@@ -265,6 +265,7 @@ nav a:hover::after {
   margin-bottom: 0.5rem;
   flex-wrap: wrap;
   gap: 0.75rem;
+  cursor: pointer;
 }
 
 .diary-title {
@@ -320,6 +321,14 @@ nav a:hover::after {
 }
 
 /* -- individual entries within a diary -- */
+
+.entry-block {
+  display: none;
+}
+
+.entry-block.open {
+  display: block;
+}
 
 .entry-link {
   display: block;

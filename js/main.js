@@ -50,3 +50,24 @@ if (roleEl) {
     }, 300);
   }, 2600);
 }
+
+/* =====================================================================
+   DIARY ENTRIES DISPLAY TOGGLE
+   Toggles the entries under each diary between hidden and shown.
+   Entries will be hidden by default.
+   ===================================================================== */
+
+const entryHeaders = document.getElementsByClassName("diary-head")
+
+// Clicking the diary header toggles the visibility of the entries
+
+for (const header of entryHeaders) {
+
+  header.addEventListener("click", () => {
+
+    const entryHeader = header.parentElement;
+    const entry = entryHeader.querySelector(".entry-block");
+
+    entry.classList.toggle("open");
+  });
+}
