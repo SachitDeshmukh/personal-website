@@ -5,7 +5,6 @@
    All colors respond automatically via the CSS variables in style.css.
    ===================================================================== */
 
-// ---------- Theme Toggle ----------
 const themeToggle = document.getElementById("themeToggle");
 const root = document.documentElement;
 
