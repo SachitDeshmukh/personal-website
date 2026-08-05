@@ -205,6 +205,15 @@ hr {
     margin: 2rem 0
 }
 
+.article-quote footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 1rem 1rem 1rem;
+    font-size: 0.82rem;
+    color: var(--ink);
+    border-top: none
+}
+
 .callout {
     background: var(--accent, var(--ash-grey));
     color: var(--paper-raised);
