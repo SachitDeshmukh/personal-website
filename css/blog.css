@@ -69,6 +69,12 @@ a {
     text-decoration: none;
 }
 
+.article a {
+    color: var(--accent);
+    text-decoration: underline dashed 0.5px;
+    text-underline-offset: 3px;
+}
+
 p.citation a {
     color: var(--accent);
     text-decoration: underline;
