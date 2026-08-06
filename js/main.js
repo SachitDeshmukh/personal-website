@@ -5,7 +5,6 @@
    All colors respond automatically via the CSS variables in style.css.
    ===================================================================== */
 
-// ---------- Theme Toggle ----------
 const themeToggle = document.getElementById("themeToggle");
 const root = document.documentElement;
 
@@ -33,7 +32,7 @@ themeToggle.addEventListener("click", () => {
    Edit the "roles" array below to change the words or their order.
    ===================================================================== */
 
-const roles = ["writer", "developer", "researcher", "organizer"];
+const roles = ["a writer", "a developer", "a researcher", "a learner", "Sachit"];
 const roleEl = document.getElementById("roleWord");
 let roleIndex = 0;
 
@@ -51,3 +50,14 @@ if (roleEl) {
     }, 300);
   }, 2600);
 }
+
+/* =====================================================================
+   OPENING EXTERNAL LINKS IN NEW BROWSER
+   Open links under class "external" in new window.
+   Ensure all relevant anchor tag contain class="new-window"
+   ===================================================================== */
+
+document.querySelectorAll("a.new-window").forEach(link => {
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+});
