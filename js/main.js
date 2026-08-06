@@ -50,3 +50,14 @@ if (roleEl) {
     }, 300);
   }, 2600);
 }
+
+/* =====================================================================
+   OPENING EXTERNAL LINKS IN NEW BROWSER
+   Open links under class "external" in new window.
+   Ensure all relevant anchor tag contain class="new-window"
+   ===================================================================== */
+
+document.querySelectorAll("a.new-window").forEach(link => {
+  link.target = "_blank";
+  link.rel = "noopener noreferrer";
+});
