@@ -332,7 +332,7 @@ nav a:hover::after {
   grid-template-columns: 90px 1fr;
   gap: 1.5rem;
   padding: 0.85rem 0;
-  border-top: 1px dashed var(--rule);
+  border-top: 0.5px solid var(--accent);
   cursor: pointer;
   transition: padding-left var(--transition);
 }
@@ -356,6 +356,7 @@ nav a:hover::after {
   margin: 0 0 0.3rem;
   letter-spacing: -0.005em;
   transition: color var(--transition);
+  max-width: 500px;
 }
 
 .entry:hover .entry-body h3 {
