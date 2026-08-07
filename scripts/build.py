@@ -10,6 +10,7 @@ Usage:
 # IMPORTING NECESSARY LIBRARIES
 
 from pathlib import Path
+import shutil
 
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
@@ -17,11 +18,17 @@ from jinja2 import Environment, FileSystemLoader
 
 # CONFIGURTION
 
-SRC_DIR = Path("./src_code")
+# Since build.py is in scripts/, resolve paths relative to the repo root
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
+SRC_DIR = REPO_ROOT / "src_code"
 SRC_PREFIX = 6  # How many characters of string value should be removed from start?
-TEMPLATE_DIR = Path("./templates")
-OUTPUT_DIR = Path("./dist")
+
+TEMPLATE_DIR = REPO_ROOT / "templates"
+OUTPUT_DIR = REPO_ROOT / "dist"
+
 BASE_TEMPLATE = "base.html"
+STATIC_DIRS = ["css", "js", "resources"]  # copied into dist/ as-is
 
 
 # EXTRACTION
@@ -67,6 +74,11 @@ def build() -> None:
     template = env.get_template(BASE_TEMPLATE)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    for dir in STATIC_DIRS:
+        dir_path = REPO_ROOT / dir
+        if dir_path.exists():
+            shutil.copytree(dir_path, OUTPUT_DIR / dir, dirs_exist_ok=True)
 
     src_files = sorted(SRC_DIR.glob("*.html"))
     if not src_files:
