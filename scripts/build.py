@@ -17,11 +17,17 @@ from jinja2 import Environment, FileSystemLoader
 
 # CONFIGURTION
 
-SRC_DIR = Path("./src_code")
+# Since build.py is in scripts/, resolve paths relative to the repo root
+REPO_ROOT = Path(__file__).resolve().parent.parent
+
+SRC_DIR = REPO_ROOT / "src_code"
 SRC_PREFIX = 6  # How many characters of string value should be removed from start?
-TEMPLATE_DIR = Path("./templates")
-OUTPUT_DIR = Path("./dist")
+
+TEMPLATE_DIR = REPO_ROOT / "templates"
+OUTPUT_DIR = REPO_ROOT / "dist"
+
 BASE_TEMPLATE = "base.html"
+STATIC_DIRS = ["css", "js", "resources"]  # copied into dist/ as-is
 
 
 # EXTRACTION
