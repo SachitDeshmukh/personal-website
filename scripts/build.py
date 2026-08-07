@@ -10,6 +10,7 @@ Usage:
 # IMPORTING NECESSARY LIBRARIES
 
 from pathlib import Path
+import shutil
 
 from bs4 import BeautifulSoup
 from jinja2 import Environment, FileSystemLoader
@@ -73,6 +74,11 @@ def build() -> None:
     template = env.get_template(BASE_TEMPLATE)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
+
+    for dir in STATIC_DIRS:
+        dir_path = REPO_ROOT / dir
+        if dir_path.exists():
+            shutil.copytree(dir_path, OUTPUT_DIR / dir, dirs_exist_ok=True)
 
     src_files = sorted(SRC_DIR.glob("*.html"))
     if not src_files:
