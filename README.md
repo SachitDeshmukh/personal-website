@@ -5,12 +5,12 @@ personal-site/
 ├── index.html      → homepage markup and content (the diary entries)
 ├── blog_template/
 │   └── blog.html   → placeholder template for individual blog entries
+├── blog_entries/
 ├── css/
 │   └── style.css   → all styling, colors, fonts, spacing
 │   └── blog.css    → all styling for individual blog entries
 └── js/
     └── main.js     → theme toggle + hero word animation
-    └── blog.js     → ibid for individual blog entries
 ```
 
 ## How to preview it
