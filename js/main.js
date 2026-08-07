@@ -53,7 +53,7 @@ if (roleEl) {
 
 /* =====================================================================
    OPENING EXTERNAL LINKS IN NEW BROWSER
-   Open links under class "external" in new window.
+   Open links under class "new-window" in new window.
    Ensure all relevant anchor tag contain class="new-window"
    ===================================================================== */
 
