@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page_title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;500;600&family=Work+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    {{ style_sheet }}
+</head>
+
+<body>
+    <!-- ============ HEADER ============ -->
+    <header>
+        <a href="https://www.sachitdeshmukh.com/" class="brand">Sachit Deshmukh</a>
+        <div class="header-right">
+            <nav>
+                <a href="#">Creative</a>
+                <a href="#">Programming</a>
+                <a href="#">Research</a>
+                <a href="#">Blogs</a>
+                <a href="#">Social</a>
+            </nav>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <svg fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 3v1.5M12 19.5V21M4.22 4.22l1.06 1.06M18.72 18.72l1.06 1.06M3 12h1.5M19.5 12H21M4.22 19.78l1.06-1.06M18.72 5.28l1.06-1.06M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    {{ main_body }}
+
+    <footer>
+        <div>© 2026 — Entries Written Earnestly</div>
+        <div class="links">
+            <a href="mailto:sachit1deshmukh@gmail.com">Email</a>
+            <a href="https://github.com/SachitDeshmukh">GitHub</a>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+
+</html>
