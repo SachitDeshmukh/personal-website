@@ -186,8 +186,7 @@ h1 {
 .subtitle,
 .meta,
 .breadcrumb,
-.citation,
-figcaption {
+.citation {
     color: var(--ink-soft)
 }
 
@@ -243,6 +242,13 @@ hr {
 
 figure {
     margin: 2rem 0
+}
+
+figcaption {
+    color: var(--ink-soft);
+    text-align: center;
+    font-style: italic;
+    font-size: .82rem;
 }
 
 .article-figure img {
