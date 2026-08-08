@@ -1,81 +1,64 @@
-# Personal Site — Project Structure
+# Personal Website — README
 
-```
-personal-site/
-├── index.html      → homepage markup and content (the diary entries)
-├── blog_template/
-│   └── blog.html   → placeholder template for individual blog entries
-├── blog_entries/
-├── css/
-│   └── style.css   → all styling, colors, fonts, spacing
-│   └── blog.css    → all styling for individual blog entries
-└── js/
-    └── main.js     → theme toggle + hero word animation
-```
+A small static-site build repository that converts minimal per-page source files in src_code/ into full pages using Jinja2 templates and outputs a ready-to-serve site into dist/.
 
-## How to preview it
+## Requirements
 
-Open `index.html` directly in a browser, or run a tiny local server from
-this folder (recommended, avoids some browser file-loading quirks):
+- Python 3.13+
+- pip
+- uv (astral-sh package manager) — optional but used in CI
+- Dependencies are declared in pyproject.toml / uv.lock
 
-```
-python3 -m http.server 8000
-```
+## Project layout
 
-Then visit `http://localhost:8000`.
+- src_code/ — source snippets (each file must include a `<title>`, a `<link rel="stylesheet"...>` and a `<main>` block)
+- templates/ — Jinja2 templates (base.html, blog_design.html)
+- css/, js/, resources/ — static assets copied to dist/
+- scripts/build.py — build script that renders templates into dist/
+- dist/ — generated site (output)
 
-## Editing content (text, entries, links)
+## Quickstart (Windows)
 
-All content lives in `index.html`.
+1. Create & activate virtualenv:
+   - PowerShell:
+     - python -m venv .venv
+     - .venv\Scripts\Activate.ps1
+   - CMD:
+     - python -m venv .venv
+     - .venv\Scripts\activate
+2. Install tooling:
+   - pip install --upgrade pip
+   - pip install uv jinja2 beautifulsoup4
+3. Sync (if using uv):
+   - uv sync
+4. Run build:
+   - uv run python scripts\build.py
+   - or: python scripts\build.py
+5. Preview locally:
+   - cd dist
+   - python -m http.server 8000
+   - open http://localhost:8000
 
-- **To edit an entry**: find its `<div class="entry">` block and change
-  the date, title, or description text.
-- **To add an entry**: copy an existing `<div class="entry">...</div>`
-  block within the diary you want, paste it above or below the others,
-  and edit the text. Newest entries should go first.
-- **To add a brand-new diary** (a 6th category): copy an entire
-  `<div class="diary" data-cat="...">...</div>` block, give it a new
-  `data-cat` value (e.g. `data-cat="music"`), and add matching colors
-  for it in `style.css` (see below).
-- **To change nav links or footer links**: edit the `<nav>` and
-  `<footer>` sections near the top and bottom of `index.html`.
+## How source files are transformed
 
-## Editing the theme (colors, fonts, spacing)
+- build.py extracts:
+  - page_title from `<title>`
+  - style_sheet from the first `<link>` tag
+  - main_body from `<main>`
+- Output file names drop the numeric prefix set by SRC_PREFIX (see scripts/build.py).
 
-All visual styling lives in `css/style.css`, and the file is organized
-into labeled sections in this order: tokens, base, header, hero,
-diaries, footer, responsive.
+## Adding / editing pages
 
-- **Colors**: everything is driven by CSS variables defined at the top
-  of the file, under `:root` (light mode) and `html.dark` (dark mode).
-  Change a variable once and it updates everywhere it's used.
-- **Diary accent colors**: each diary category has its own accent
-  color (`--terracotta`, `--olive`, `--umber`, `--rose`, `--gold`).
-  These are wired to categories near the bottom of the file, under
-  "per-diary accent colors" — match the `data-cat` value from
-  `index.html` to a color variable.
-- **Fonts**: three font families are loaded via Google Fonts in
-  `index.html`'s `<head>` — Fraunces (serif, headings), Work Sans
-  (sans-serif, body), and IBM Plex Mono (dates, labels, tags). Swap
-  the Google Fonts link and the `font-family` values in `style.css`
-  to change them.
-- **Spacing / density**: look for `padding`, `margin`, and `gap`
-  values in each section of `style.css`.
+- Add a file to src_code/ following the existing pattern (`<title>`, `<link>`, `<main>`).
+- Update templates/ or css/ as needed.
+- Re-run the build script using `uv run python scripts\build.py`.
 
-## Editing behavior
+## Deployment
 
-`js/main.js` has two small, independent pieces:
+- A GitHub Actions workflow (.github/workflows/deploy.yml) builds and deploys to GitHub Pages when code is pushed to the `release` branch. The workflow uses `uv sync` and runs the same build script, then uploads dist/ to Pages.
 
-- Theme toggle (click handler on the sun/moon button)
-- Hero role-word rotation (edit the `roles` array to change the words)
+## Notes / troubleshooting
 
-Both are short and commented — safe to edit directly.
-
-## Adding new pages
-
-Right now `index.html` is the homepage only. Each diary's "OPEN DIARY"
-link currently points to `#`. When you're ready to build a dedicated
-page per diary (e.g. `writing.html`), copy `index.html` as a starting
-point, keep the same `<link>` and `<script>` tags so it shares the
-same `style.css` and `main.js`, then replace the `.diaries` section
-with a full list of entries for that one diary.
+- build.py raises an error if a source file is missing `<title>`, `<link>`, or `<main>`.
+- Adjust SRC_PREFIX in scripts/build.py if your filename prefix length changes.
+- If using uv in CI, keep uv.lock in repo to pin dependencies.
