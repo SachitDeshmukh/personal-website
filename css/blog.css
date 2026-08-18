@@ -186,8 +186,7 @@ h1 {
 .subtitle,
 .meta,
 .breadcrumb,
-.citation,
-figcaption {
+.citation {
     color: var(--ink-soft)
 }
 
@@ -245,6 +244,13 @@ figure {
     margin: 2rem 0
 }
 
+figcaption {
+    color: var(--ink-soft);
+    text-align: center;
+    font-style: italic;
+    font-size: .82rem;
+}
+
 .article-figure img {
     width: 100%;
     aspect-ratio: 16 / 9;
@@ -285,6 +291,41 @@ code {
 .related li {
     padding: 1rem 0;
     border-bottom: 1px solid var(--rule)
+}
+
+.choice-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.choice-grid a {
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    transition: background var(--transition), transform 300ms ease;
+    text-decoration: none
+}
+
+.choice-grid a[class="choice"] {
+    background: var(--paper-raised, var(--ash-grey));
+    color: var(--accent);
+}
+
+.choice-grid a[class="choice"]:hover {
+    background: var(--accent);
+    color: var(--paper-raised);
+}
+
+.choice-grid a[class="dead-end"] {
+    background: var(--paper-raised, var(--ash-grey));
+    color: var(--blush-rose);
+}
+
+.choice-grid a[class="dead-end"]:hover {
+    background: var(--blush-rose);
+    color: var(--paper-raised);
 }
 
 /* -- per-diary accent colors --
