@@ -293,6 +293,41 @@ code {
     border-bottom: 1px solid var(--rule)
 }
 
+.choice-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.choice-grid a {
+    padding: 1rem 1.2rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    transition: background var(--transition), transform 300ms ease;
+    text-decoration: none
+}
+
+.choice-grid a[class="choice"] {
+    background: var(--paper-raised, var(--ash-grey));
+    color: var(--accent);
+}
+
+.choice-grid a[class="choice"]:hover {
+    background: var(--accent);
+    color: var(--paper-raised);
+}
+
+.choice-grid a[class="dead-end"] {
+    background: var(--paper-raised, var(--ash-grey));
+    color: var(--blush-rose);
+}
+
+.choice-grid a[class="dead-end"]:hover {
+    background: var(--blush-rose);
+    color: var(--paper-raised);
+}
+
 /* -- per-diary accent colors --
    To add a new diary category, add a matching pair of rules here
    using the same data-cat value you give the .diary div in index.html. */
