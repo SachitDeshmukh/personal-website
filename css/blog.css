@@ -80,6 +80,11 @@ p.citation a {
     text-decoration: underline;
 }
 
+.callout a {
+    color: var(--paper-raised);
+    text-decoration: underline dashed 0.5px;
+}
+
 /* =====================================================================
    HEADER
    ===================================================================== */
