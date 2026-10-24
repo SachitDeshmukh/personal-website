@@ -38,22 +38,23 @@ def extract_page_data(src_path: Path) -> dict:
     """
     Parse a single source file and pull out:
       - page_title: plain text from <title>
+      - style_sheet: all <link> elements as HTML
       - main_body: the inner HTML of <main>, as a raw string
 
-    Raises ValueError if either tag is missing, so a malformed src file
+    Raises ValueError if a required element is missing, so a malformed src file
     fails the build loudly instead of silently producing a broken page.
     """
     soup = BeautifulSoup(src_path.read_text(encoding="utf-8"), "html.parser")
 
     title_tag = soup.find("title")
-    link_tag_stylesheet = soup.find("link")
+    link_tags_stylesheet = soup.find_all("link")
     main_tag = soup.find("main")
 
-    if title_tag is None or link_tag_stylesheet is None or main_tag is None:
+    if title_tag is None or not link_tags_stylesheet or main_tag is None:
         raise ValueError(f"{src_path.name} is missing a <title>,<link> or <main> tag")
 
     page_title = title_tag.get_text(strip=True)
-    style_sheet = link_tag_stylesheet.decode().strip()
+    style_sheet = "\n".join(link.decode().strip() for link in link_tags_stylesheet)
     main_body = main_tag.decode().strip()
 
     return {
