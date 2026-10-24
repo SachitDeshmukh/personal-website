@@ -32,7 +32,7 @@ themeToggle.addEventListener("click", () => {
    Edit the "roles" array below to change the words or their order.
    ===================================================================== */
 
-const roles = ["a writer", "a developer", "a researcher", "a learner", "Sachit"];
+const roles = ["a writer", "a researcher", "a professional", "Sachit"];
 const roleEl = document.getElementById("roleWord");
 let roleIndex = 0;
 
