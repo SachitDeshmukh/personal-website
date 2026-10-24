@@ -28,7 +28,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
-  line-height: 1.8;
+  line-height: var(--line-height-copy);
   transition: background var(--transition), color var(--transition);
   -webkit-font-smoothing: antialiased;
 }
@@ -55,16 +55,16 @@ h3 {
 
 /* Small uppercase section label, e.g. "FEATURED" */
 .label {
-  font: 500 .7rem var(--font-mono);
-  letter-spacing: .12em;
+  font: var(--weight-medium) var(--font-size-label) var(--font-mono);
+  letter-spacing: var(--letter-spacing-label);
   text-transform: uppercase;
   color: var(--accent);
-  margin: 0 0 1rem;
+  margin: 0 0 var(--space-1);
 }
 
 :focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 2px;
+  outline: var(--border-width-emphasis) solid var(--accent);
+  outline-offset: var(--focus-offset);
 }
 
 
@@ -102,33 +102,33 @@ body.personal,
   ===================================================================== */
 
 .stagger>* {
-  animation: rise 700ms var(--transition) both;
+  animation: rise var(--motion-entrance) var(--transition) both;
 }
 
 .stagger> :nth-child(2) {
-  animation-delay: 70ms;
+  animation-delay: var(--motion-stagger-2);
 }
 
 .stagger> :nth-child(3) {
-  animation-delay: 140ms;
+  animation-delay: var(--motion-stagger-3);
 }
 
 .stagger> :nth-child(4) {
-  animation-delay: 210ms;
+  animation-delay: var(--motion-stagger-4);
 }
 
 .stagger> :nth-child(5) {
-  animation-delay: 280ms;
+  animation-delay: var(--motion-stagger-5);
 }
 
 .stagger> :nth-child(n+6) {
-  animation-delay: 350ms;
+  animation-delay: var(--motion-stagger-limit);
 }
 
 @keyframes rise {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(var(--rise-distance));
   }
 }
 
@@ -146,61 +146,61 @@ body.personal,
   ===================================================================== */
 
 .portfolio {
-  max-width: 1000px;
-  margin: 2rem auto 5rem;
-  padding: 0 3rem;
+  max-width: var(--content-width-wide);
+  margin: var(--space-2) auto var(--space-5);
+  padding: 0 var(--space-3);
   display: grid;
-  grid-template-columns: 250px 1fr;
-  gap: 4.5rem;
+  grid-template-columns: var(--portfolio-author-column) 1fr;
+  gap: var(--space-45);
 }
 
 /* -- Author column (left) -- */
 .author {
   position: sticky;
-  top: 2rem;
+  top: var(--space-2);
   align-self: start;
 }
 
 .author h1 {
-  font: italic 500 2.1rem/1.15 var(--font-serif);
-  margin: 0 0 1rem;
+  font: italic var(--weight-medium) var(--font-size-mobile-heading)/var(--line-height-heading) var(--font-serif);
+  margin: 0 0 var(--space-1);
 }
 
 .author p {
-  font-size: .92rem;
+  font-size: var(--font-size-body-small);
   color: var(--ink-soft);
-  margin: 0 0 1.25rem;
+  margin: 0 0 var(--space-125);
 }
 
 .creative .meta {
   list-style: none;
   padding: 0;
-  margin: 0 0 1.5rem;
-  font-size: .75rem;
+  margin: 0 0 var(--space-15);
+  font-size: var(--font-size-meta);
   color: var(--ink-soft);
 }
 
 .creative .meta li {
-  padding: .4rem 0;
-  border-top: 1px solid var(--rule);
+  padding: var(--space-04) 0;
+  border-top: var(--border-width) solid var(--rule);
 }
 
 .creative .contact {
-  font-size: .75rem;
+  font-size: var(--font-size-meta);
   color: var(--accent);
 }
 
 /* -- Featured piece with pull quote -- */
 .featured {
-  padding-bottom: 2.5rem;
-  margin-bottom: 2.5rem;
-  border-bottom: 1px solid var(--rule);
+  padding-bottom: var(--space-25);
+  margin-bottom: var(--space-25);
+  border-bottom: var(--border-width) solid var(--rule);
 }
 
 .featured h2 {
-  font: 400 2.4rem/1.15 var(--font-serif);
-  margin: 0 0 1.25rem;
-  letter-spacing: -.015em;
+  font: var(--weight-regular) var(--font-size-featured-heading)/var(--line-height-heading) var(--font-serif);
+  margin: 0 0 var(--space-125);
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .featured a:hover {
@@ -208,15 +208,15 @@ body.personal,
 }
 
 blockquote {
-  margin: 0 0 1rem;
-  padding-left: 1.25rem;
-  border-left: 2px solid var(--accent);
-  font: italic 1.15rem/1.6 var(--font-serif);
+  margin: 0 0 var(--space-1);
+  padding-left: var(--space-125);
+  border-left: var(--border-width-emphasis) solid var(--accent);
+  font: italic var(--font-size-quote)/var(--line-height-quote) var(--font-serif);
   color: var(--ink-soft);
 }
 
 .venue {
-  font-size: .85rem;
+  font-size: var(--font-size-caption);
   color: var(--ink-soft);
   margin: 0;
 }
@@ -225,20 +225,20 @@ blockquote {
 .work {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 1.5rem;
-  padding: 1.2rem 0;
-  border-top: 1px solid var(--rule);
+  gap: var(--space-15);
+  padding: var(--space-12) 0;
+  border-top: var(--border-width) solid var(--rule);
   transition: padding-left var(--transition);
 }
 
 .work:hover {
-  padding-left: .6rem;
+  padding-left: var(--space-06);
 }
 
 .work h3 {
-  font: 500 1.25rem var(--font-serif);
+  font: var(--weight-medium) var(--font-size-2xl) var(--font-serif);
   color: var(--ink);
-  margin: 0 0 .25rem;
+  margin: 0 0 var(--space-025);
   transition: color var(--transition);
 }
 
@@ -248,23 +248,23 @@ blockquote {
 
 .work p {
   margin: 0;
-  font-size: .88rem;
+  font-size: var(--font-size-small);
   color: var(--ink-soft);
-  max-width: 430px;
+  max-width: var(--content-width-selected-work);
 }
 
 .work span {
-  font-size: .72rem;
+  font-size: var(--font-size-sm);
   color: var(--ink-soft);
-  padding-top: .35rem;
+  padding-top: var(--space-035);
   white-space: nowrap;
 }
 
 @media (max-width: 760px) {
   .portfolio {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
-    padding: 0 1.5rem;
+    gap: var(--space-25);
+    padding: 0 var(--space-15);
   }
 
   .author {
@@ -281,38 +281,38 @@ blockquote {
   ===================================================================== */
 
 .ledger {
-  max-width: 1000px;
-  margin: 2rem auto 5rem;
-  padding: 0 3rem;
+  max-width: var(--content-width-wide);
+  margin: var(--space-2) auto var(--space-5);
+  padding: 0 var(--space-3);
 }
 
 .ledger h1 {
-  font: 500 2.2rem var(--font-serif);
-  margin: 0 0 .5rem;
-  letter-spacing: -.01em;
+  font: var(--weight-medium) var(--font-size-ledger-heading) var(--font-serif);
+  margin: 0 0 var(--space-05);
+  letter-spacing: var(--letter-spacing-very-tight);
 }
 
 .lede {
   color: var(--ink-soft);
-  margin: 0 0 2rem;
-  max-width: 520px;
+  margin: 0 0 var(--space-2);
+  max-width: var(--content-width-ledger-copy);
 }
 
 /* -- Summary strip: entries / repos / last posted -- */
 .summary {
   display: flex;
-  border: 1px solid var(--rule);
-  margin-bottom: 2rem;
-  font-size: .7rem;
-  letter-spacing: .08em;
+  border: var(--border-width) solid var(--rule);
+  margin-bottom: var(--space-2);
+  font-size: var(--font-size-label);
+  letter-spacing: var(--letter-spacing-loose);
   text-transform: uppercase;
   color: var(--ink-soft);
 }
 
 .summary div {
   flex: 1;
-  padding: .9rem 1.1rem;
-  border-right: 1px solid var(--rule);
+  padding: var(--space-09) var(--space-11);
+  border-right: var(--border-width) solid var(--rule);
 }
 
 .summary div:last-child {
@@ -321,7 +321,7 @@ blockquote {
 
 .summary b {
   display: block;
-  font: 500 1.4rem var(--font-mono);
+  font: var(--weight-medium) var(--font-size-summary-number) var(--font-mono);
   color: var(--accent);
   letter-spacing: 0;
   text-transform: none;
@@ -335,29 +335,29 @@ blockquote {
 .technical table {
   width: 100%;
   border-collapse: collapse;
-  font-size: .88rem;
+  font-size: var(--font-size-small);
 }
 
 .technical th {
-  font: 500 .68rem var(--font-mono);
-  letter-spacing: .1em;
+  font: var(--weight-medium) var(--font-size-xs) var(--font-mono);
+  letter-spacing: var(--letter-spacing-wide);
   text-transform: uppercase;
   text-align: left;
-  padding: .7rem;
-  border-top: 2px solid var(--ink);
-  border-bottom: 1px solid var(--ink);
+  padding: var(--space-07);
+  border-top: var(--border-width-emphasis) solid var(--ink);
+  border-bottom: var(--border-width) solid var(--ink);
   color: var(--ink-soft);
 }
 
 .technical td {
-  padding: .9rem .7rem;
-  border-bottom: 1px solid var(--rule);
+  padding: var(--space-09) var(--space-07);
+  border-bottom: var(--border-width) solid var(--rule);
   vertical-align: top;
 }
 
 .technical th+th,
 .technical td+td {
-  border-left: 1px solid var(--rule);
+  border-left: var(--border-width) solid var(--rule);
 }
 
 .technical tbody tr {
@@ -370,20 +370,20 @@ blockquote {
 
 /* -- Cell types: entry number, date/stack, title, status -- */
 .num {
-  font: .78rem var(--font-mono);
+  font: var(--font-size-mono) var(--font-mono);
   color: var(--ink-soft);
-  width: 3.5rem;
+  width: var(--ledger-number-column);
 }
 
 .technical td.mono {
-  font-size: .78rem;
+  font-size: var(--font-size-mono);
   white-space: nowrap;
 }
 
 .title strong {
   display: block;
-  font: 500 1rem var(--font-serif);
-  margin-bottom: .15rem;
+  font: var(--weight-medium) var(--font-size-lg) var(--font-serif);
+  margin-bottom: var(--space-015);
   transition: color var(--transition);
 }
 
@@ -401,15 +401,15 @@ tr:hover .title strong {
 
 /* -- Footer row: "carried forward" total with double rule -- */
 .technical tfoot td {
-  border-top: 3px double var(--ink);
+  border-top: var(--border-width-heavy) double var(--ink);
   border-bottom: 0;
-  font: .78rem var(--font-mono);
+  font: var(--font-size-mono) var(--font-mono);
   color: var(--ink-soft);
 }
 
 @media (max-width: 680px) {
   .ledger {
-    padding: 0 1.5rem;
+    padding: 0 var(--space-15);
   }
 
   .summary {
@@ -418,7 +418,7 @@ tr:hover .title strong {
 
   .summary div {
     border: 0;
-    border-bottom: 1px solid var(--rule);
+    border-bottom: var(--border-width) solid var(--rule);
   }
 }
 
@@ -434,34 +434,34 @@ body.professional {
 }
 
 .sheet {
-  max-width: 800px;
-  margin: 1rem auto 4rem;
+  max-width: var(--content-width-resume);
+  margin: var(--space-1) auto var(--space-4);
   background: var(--paper);
-  border: 1px solid var(--rule);
-  padding: 3.5rem 4rem;
+  border: var(--border-width) solid var(--rule);
+  padding: var(--space-35) var(--space-4);
 }
 
 /* -- Name block -- */
 .sheet-head {
-  padding-bottom: 1.5rem;
-  border-bottom: 2px solid var(--ink);
-  margin-bottom: .5rem;
+  padding-bottom: var(--space-15);
+  border-bottom: var(--border-width-emphasis) solid var(--ink);
+  margin-bottom: var(--space-05);
 }
 
 .sheet-head h1 {
-  font: 500 2.3rem var(--font-serif);
+  font: var(--weight-medium) var(--font-size-resume-heading) var(--font-serif);
   margin: 0;
-  letter-spacing: -.015em;
+  letter-spacing: var(--letter-spacing-tight);
 }
 
 .professional .role {
   color: var(--accent);
-  margin: .25rem 0 .75rem;
-  font-weight: 500;
+  margin: var(--space-025) 0 var(--space-075);
+  font-weight: var(--weight-medium);
 }
 
 .professional .contact {
-  font-size: .75rem;
+  font-size: var(--font-size-meta);
   color: var(--ink-soft);
   margin: 0;
 }
@@ -469,10 +469,10 @@ body.professional {
 /* -- Resume sections (label left, content right) -- */
 .r {
   display: grid;
-  grid-template-columns: 140px 1fr;
-  gap: 1.5rem;
-  padding: 1.6rem 0;
-  border-bottom: 1px solid var(--rule);
+  grid-template-columns: var(--resume-label-column) 1fr;
+  gap: var(--space-15);
+  padding: var(--space-16) 0;
+  border-bottom: var(--border-width) solid var(--rule);
 }
 
 .r:last-child {
@@ -481,22 +481,22 @@ body.professional {
 }
 
 .r h2 {
-  font: 500 .7rem var(--font-mono);
-  letter-spacing: .12em;
+  font: var(--weight-medium) var(--font-size-label) var(--font-mono);
+  letter-spacing: var(--letter-spacing-label);
   text-transform: uppercase;
   color: var(--accent);
-  margin: .3rem 0 0;
+  margin: var(--space-03) 0 0;
 }
 
 .r p {
   margin: 0;
-  font-size: .93rem;
+  font-size: var(--font-size-body-medium);
   color: var(--ink-soft);
 }
 
 /* -- Individual entries: title + year, outlet, bullet points -- */
 .item {
-  margin-bottom: 1.4rem;
+  margin-bottom: var(--space-14);
 }
 
 .item:last-child {
@@ -506,12 +506,12 @@ body.professional {
 .item-head {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: var(--space-1);
   align-items: baseline;
 }
 
 .item-head strong {
-  font: 500 1.05rem var(--font-serif);
+  font: var(--weight-medium) var(--font-size-body-large) var(--font-serif);
   transition: color var(--transition);
 }
 
@@ -520,25 +520,25 @@ body.professional {
 }
 
 .item-head span {
-  font-size: .72rem;
+  font-size: var(--font-size-sm);
   color: var(--ink-soft);
   white-space: nowrap;
 }
 
 .org {
   font-style: italic;
-  margin: .1rem 0 .4rem !important;
+  margin: var(--space-01) 0 var(--space-04) !important;
 }
 
 .item ul {
   margin: 0;
-  padding-left: 1.1rem;
-  font-size: .88rem;
+  padding-left: var(--space-11);
+  font-size: var(--font-size-small);
   color: var(--ink-soft);
 }
 
 .item li {
-  margin-bottom: .2rem;
+  margin-bottom: var(--space-02);
 }
 
 .item li::marker {
@@ -547,13 +547,13 @@ body.professional {
 
 @media (max-width: 680px) {
   .sheet {
-    padding: 2rem 1.5rem;
-    margin: 0 .75rem 3rem;
+    padding: var(--space-2) var(--space-15);
+    margin: 0 var(--space-075) var(--space-3);
   }
 
   .r {
     grid-template-columns: 1fr;
-    gap: .5rem;
+    gap: var(--space-05);
   }
 }
 
@@ -561,41 +561,41 @@ body.professional {
 /* =====================================================================
   [07] PERSONAL: HANDWRITTEN DIARY
   Ruled notebook page with a margin line, set in Caveat.
-  Every block height is a multiple of 32px so text sits on the ruled lines.
-  If you change the 32px line height, change it everywhere in this section.
+  Every block height matches the notebook line-height token so text sits on
+  the ruled lines.
   ===================================================================== */
 
 .notebook {
-  max-width: 720px;
-  margin: 1rem auto 5rem;
-  padding: 0 1rem;
+  max-width: var(--content-width-notebook);
+  margin: var(--space-1) auto var(--space-5);
+  padding: 0 var(--space-1);
 }
 
 .notebook>.label {
-  padding-left: 5rem;
+  padding-left: var(--space-5);
 }
 
 /* -- The page: ruled-line background + margin line -- */
 .page {
   position: relative;
-  border: 1px solid var(--rule);
-  padding: 32px 2rem 0 5rem;
+  border: var(--border-width) solid var(--rule);
+  padding: var(--notebook-line-height) var(--space-2) 0 var(--space-5);
   background:
-    repeating-linear-gradient(to bottom, transparent 0, transparent 31px, var(--rule) 31px, var(--rule) 32px),
+    repeating-linear-gradient(to bottom, transparent 0, transparent calc(var(--notebook-line-height) - var(--border-width)), var(--rule) calc(var(--notebook-line-height) - var(--border-width)), var(--rule) var(--notebook-line-height)),
     var(--paper);
-  font: 400 1.4rem/32px var(--font-hand);
+  font: var(--weight-regular) var(--font-size-notebook)/var(--notebook-line-height) var(--font-hand);
   color: var(--ink);
 }
 
 .page::before {
   content: '';
   position: absolute;
-  left: 3.6rem;
+  left: var(--space-36);
   top: 0;
   bottom: 0;
-  width: 1px;
+  width: var(--border-width);
   background: var(--accent);
-  opacity: .7;
+  opacity: var(--opacity-handwriting);
 }
 
 /* -- One diary entry: date, title, text, mood -- */
@@ -604,42 +604,42 @@ body.professional {
 }
 
 .personal .entry p {
-  margin: 0 0 32px;
+  margin: 0 0 var(--notebook-line-height);
 }
 
 .personal .entry .date {
-  font: 700 1.9rem/32px var(--font-serif);
+  font: var(--weight-bold) var(--font-size-large-diary)/var(--notebook-line-height) var(--font-serif);
   color: var(--accent);
   margin: 0;
-  font-size: 1.25rem;
+  font-size: var(--font-size-2xl);
 }
 
 .personal .entry h2 {
-  font: 700 1.9rem/32px var(--font-serif);
+  font: var(--weight-bold) var(--font-size-large-diary)/var(--notebook-line-height) var(--font-serif);
   color: var(--ink);
-  margin: 0 0 32px;
+  margin: 0 0 var(--notebook-line-height);
   transform-origin: left;
   transition: transform var(--transition), color var(--transition);
 }
 
 .personal .entry:hover h2 {
-  transform: rotate(-1deg);
+  transform: rotate(var(--handwriting-hover-angle));
   color: var(--accent);
 }
 
 .personal .entry .mood {
   color: var(--ink-soft);
-  font-size: 1.15rem;
+  font-size: var(--font-size-quote);
 }
 
 /* -- "Turn to earlier pages" link -- */
 .more {
   margin: 0;
-  padding-bottom: 32px;
+  padding-bottom: var(--notebook-line-height);
   color: var(--ink-soft);
 }
 
 .more a {
   color: var(--accent);
-  border-bottom: 1px dashed var(--accent);
+  border-bottom: var(--border-width) dashed var(--accent);
 }

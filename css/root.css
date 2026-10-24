@@ -50,6 +50,137 @@
 
     /* -- Motion -- */
     --transition: 420ms cubic-bezier(0.22, 1, 0.36, 1);
+
+    /* -- Shared layout and spacing -- */
+    --content-width-wide: 1000px;
+    --content-width-hero: 780px;
+    --content-width-article: 760px;
+    --content-width-resume: 800px;
+    --content-width-notebook: 720px;
+    --content-width-ledger-copy: 520px;
+    --content-width-selected-work: 430px;
+    --space-025: 0.25rem;
+    --space-01: 0.1rem;
+    --space-015: 0.15rem;
+    --space-02: 0.2rem;
+    --space-03: 0.3rem;
+    --space-035: 0.35rem;
+    --space-04: 0.4rem;
+    --space-05: 0.5rem;
+    --space-06: 0.6rem;
+    --space-07: 0.7rem;
+    --space-075: 0.75rem;
+    --space-085: 0.85rem;
+    --space-09: 0.9rem;
+    --space-1: 1rem;
+    --space-11: 1.1rem;
+    --space-12: 1.2rem;
+    --space-125: 1.25rem;
+    --space-14: 1.4rem;
+    --space-15: 1.5rem;
+    --space-16: 1.6rem;
+    --space-175: 1.75rem;
+    --space-2: 2rem;
+    --space-225: 2.25rem;
+    --space-25: 2.5rem;
+    --space-3: 3rem;
+    --space-35: 3.5rem;
+    --space-36: 3.6rem;
+    --space-4: 4rem;
+    --space-45: 4.5rem;
+    --space-5: 5rem;
+    --space-55: 5.5rem;
+    --space-6: 6rem;
+
+    /* -- Typography -- */
+    --font-size-xs: 0.68rem;
+    --font-size-label: 0.7rem;
+    --font-size-sm: 0.72rem;
+    --font-size-meta: 0.75rem;
+    --font-size-mono: 0.78rem;
+    --font-size-footer: 0.82rem;
+    --font-size-caption: 0.85rem;
+    --font-size-description: 0.87rem;
+    --font-size-small: 0.88rem;
+    --font-size-md: 0.9rem;
+    --font-size-body-small: 0.92rem;
+    --font-size-body-medium: 0.93rem;
+    --font-size-lg: 1rem;
+    --font-size-body-large: 1.05rem;
+    --font-size-xl: 1.1rem;
+    --font-size-quote: 1.15rem;
+    --font-size-2xl: 1.25rem;
+    --font-size-brand: 1.35rem;
+    --font-size-diary-title: 1.6rem;
+    --font-size-large-diary: 1.9rem;
+    --font-size-mobile-heading: 2.1rem;
+    --font-size-ledger-heading: 2.2rem;
+    --font-size-resume-heading: 2.3rem;
+    --font-size-featured-heading: 2.4rem;
+    --font-size-notebook: 1.4rem;
+    --font-size-summary-number: 1.4rem;
+    --font-size-5xl: 3rem;
+    --line-height-tight: 1.1;
+    --line-height-single: 1;
+    --line-height-copy: 1.8;
+    --line-height-heading: 1.15;
+    --line-height-reading: 1.7;
+    --line-height-relaxed: 1.55;
+    --line-height-quote: 1.6;
+    --weight-regular: 400;
+    --weight-medium: 500;
+    --weight-bold: 700;
+
+    /* -- Borders and motion -- */
+    --border-width: 1px;
+    --border-width-emphasis: 2px;
+    --border-width-heavy: 3px;
+    --border-width-hairline: 0.5px;
+    --border-width-accent: 4px;
+    --radius-small: 8px;
+    --motion-fast: 300ms;
+    --motion-stagger-2: 70ms;
+    --motion-stagger-3: 140ms;
+    --motion-stagger-4: 210ms;
+    --motion-stagger-5: 280ms;
+    --motion-stagger-limit: 350ms;
+    --motion-role: 500ms;
+    --motion-entrance: 700ms;
+
+    /* -- Handwritten notebook ruling -- */
+    --notebook-line-height: 32px;
+    --placeholder-height: 320px;
+    --portfolio-author-column: 250px;
+    --resume-label-column: 140px;
+    --ledger-number-column: 3.5rem;
+    --control-size: 38px;
+    --icon-size: 16px;
+    --decoration-width: 22px;
+    --underline-offset: -4px;
+    --hover-angle: 20deg;
+    --mobile-marginline-offset: 2.2rem;
+    --focus-offset: 2px;
+    --text-underline-offset: 3px;
+    --letter-spacing-label: 0.12em;
+    --letter-spacing-tight: -0.015em;
+    --letter-spacing-micro: -0.005em;
+    --letter-spacing-small: 0.04em;
+    --letter-spacing-wide: 0.1em;
+    --letter-spacing-loose: 0.08em;
+    --hairline-height: 1px;
+    --spine-width: 3px;
+    --spine-width-accent: 5px;
+    --entry-title-width: 500px;
+    --entry-description-width: 460px;
+    --diary-description-width: 480px;
+    --hero-copy-width: 560px;
+    --entry-date-column: 90px;
+    --arrow-shift: 3px;
+    --hover-gradient-stop: 25%;
+    --opacity-handwriting: 0.7;
+    --handwriting-hover-angle: -1deg;
+    --rise-distance: 10px;
+    --letter-spacing-very-tight: -0.01em;
 }
 
 html.dark {
@@ -75,21 +206,21 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 3rem 1.5rem;
-    max-width: 1000px;
+    padding: var(--space-2) var(--space-3) var(--space-15);
+    max-width: var(--content-width-wide);
     margin: 0 auto;
 }
 
 .header-right {
     display: flex;
     align-items: center;
-    gap: 1.75rem;
+    gap: var(--space-175);
 }
 
 nav {
     display: flex;
-    gap: 2rem;
-    font-size: 0.9rem;
+    gap: var(--space-2);
+    font-size: var(--font-size-md);
     color: var(--ink);
 }
 
@@ -106,9 +237,9 @@ nav a::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: -4px;
+    bottom: var(--underline-offset);
     width: 0;
-    height: 1px;
+    height: var(--border-width);
     background: var(--blush-rose);
     transition: width var(--transition);
 }
@@ -118,25 +249,25 @@ nav a:hover::after {
 }
 
 .theme-toggle {
-    width: 38px;
-    height: 38px;
+    width: var(--control-size);
+    height: var(--control-size);
     border-radius: 50%;
-    border: 1px solid var(--rule);
+    border: var(--border-width) solid var(--rule);
     background: var(--paper-raised);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background var(--transition), transform 300ms ease;
+    transition: background var(--transition), transform var(--motion-fast) ease;
 }
 
 .theme-toggle:hover {
-    transform: rotate(20deg);
+    transform: rotate(var(--hover-angle));
 }
 
 .theme-toggle svg {
-    width: 16px;
-    height: 16px;
+    width: var(--icon-size);
+    height: var(--icon-size);
     stroke: var(--ink);
 }
 
@@ -145,19 +276,19 @@ nav a:hover::after {
    ===================================================================== */
 
 footer {
-    max-width: 1000px;
+    max-width: var(--content-width-wide);
     margin: 0 auto;
-    padding: 2rem 3rem 3rem;
+    padding: var(--space-2) var(--space-3) var(--space-3);
     display: flex;
     justify-content: space-between;
-    font-size: 0.82rem;
+    font-size: var(--font-size-footer);
     color: var(--ink);
-    border-top: 1px solid var(--rule);
+    border-top: var(--border-width) solid var(--rule);
 }
 
 footer .links {
     display: flex;
-    gap: 1.5rem;
+    gap: var(--space-15);
 }
 
 footer a:hover {
@@ -174,8 +305,8 @@ footer a:hover {
     .hero,
     .diaries,
     footer {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+        padding-left: var(--space-15);
+        padding-right: var(--space-15);
     }
 
     nav {
@@ -183,28 +314,28 @@ footer a:hover {
     }
 
     .hero h1 {
-        font-size: 2.1rem;
+        font-size: var(--font-size-mobile-heading);
     }
 
     .diary {
-        gap: 1.25rem;
+        gap: var(--space-125);
     }
 
     .entry {
         grid-template-columns: 1fr;
-        gap: 0.25rem;
+        gap: var(--space-025);
     }
 
     .page {
-        padding: 32px 1rem 0 3rem;
-        font-size: 1.25rem;
+        padding: var(--notebook-line-height) var(--space-1) 0 var(--space-3);
+        font-size: var(--font-size-2xl);
     }
 
     .page::before {
-        left: 2.2rem;
+        left: var(--mobile-marginline-offset);
     }
 
     .notebook>.label {
-        padding-left: 3rem;
+        padding-left: var(--space-3);
     }
 }

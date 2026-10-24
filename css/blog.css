@@ -11,7 +11,7 @@ body {
     background: var(--paper);
     color: var(--ink);
     font-family: var(--font-sans);
-    line-height: 1.8
+    line-height: var(--line-height-copy)
 }
 
 a {
@@ -21,8 +21,8 @@ a {
 
 .article a {
     color: var(--accent);
-    text-decoration: underline dashed 0.5px;
-    text-underline-offset: 3px;
+    text-decoration: underline dashed var(--border-width-hairline);
+    text-underline-offset: var(--text-underline-offset);
 }
 
 p.citation a {
@@ -32,7 +32,7 @@ p.citation a {
 
 .callout a {
     color: var(--paper-raised);
-    text-decoration: underline dashed 0.5px;
+    text-decoration: underline dashed var(--border-width-hairline);
 }
 
 /* =====================================================================
@@ -40,16 +40,16 @@ p.citation a {
    ===================================================================== */
 
 .article {
-    max-width: 760px;
+    max-width: var(--content-width-article);
     margin: auto;
-    padding: 2rem
+    padding: var(--space-2)
 }
 
 .brand {
     font-family: var(--font-serif);
-    font-weight: 500;
-    font-size: 1.35rem;
-    letter-spacing: -0.01em;
+    font-weight: var(--weight-medium);
+    font-size: var(--font-size-brand);
+    letter-spacing: var(--letter-spacing-very-tight);
 }
 
 h1,
@@ -60,9 +60,9 @@ h3 {
 }
 
 h1 {
-    font-size: 3rem;
-    line-height: 1.1;
-    margin-bottom: .5rem
+    font-size: var(--font-size-5xl);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--space-05)
 }
 
 .subtitle,
@@ -74,29 +74,29 @@ h1 {
 
 .meta {
     display: flex;
-    gap: .75rem;
+    gap: var(--space-075);
     font-family: var(--font-mono);
-    font-size: .85rem
+    font-size: var(--font-size-caption)
 }
 
 hr {
     border: none;
-    border-top: 1px solid var(--rule);
-    margin: 2.5rem 0
+    border-top: var(--border-width) solid var(--rule);
+    margin: var(--space-25) 0
 }
 
 .article-quote {
-    border-left: 4px solid var(--accent, var(--ash-grey));
-    padding-left: 1.5rem;
+    border-left: var(--border-width-accent) solid var(--accent, var(--ash-grey));
+    padding-left: var(--space-15);
     font-style: italic;
-    margin: 2rem 0
+    margin: var(--space-2) 0
 }
 
 .article-quote footer {
-    max-width: 1000px;
+    max-width: var(--content-width-wide);
     margin: 0 auto;
-    padding: 1rem 1rem 1rem;
-    font-size: 0.82rem;
+    padding: var(--space-1);
+    font-size: var(--font-size-footer);
     color: var(--ink);
     border-top: none
 }
@@ -104,14 +104,14 @@ hr {
 .callout {
     background: var(--accent, var(--ash-grey));
     color: var(--paper-raised);
-    padding: 1rem 1.2rem;
-    border-radius: 8px;
-    margin: 2rem 0
+    padding: var(--space-1) var(--space-12);
+    border-radius: var(--radius-small);
+    margin: var(--space-2) 0
 }
 
 .placeholder {
-    height: 320px;
-    border: 2px dashed var(--rule);
+    height: var(--placeholder-height);
+    border: var(--border-width-emphasis) dashed var(--rule);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,14 +123,14 @@ hr {
 }
 
 figure {
-    margin: 2rem 0
+    margin: var(--space-2) 0
 }
 
 figcaption {
     color: var(--ink-soft);
     text-align: center;
     font-style: italic;
-    font-size: .82rem;
+    font-size: var(--font-size-footer);
 }
 
 .article-figure img {
@@ -143,21 +143,21 @@ figcaption {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 2rem 0
+    margin: var(--space-2) 0
 }
 
 th,
 td {
-    padding: .75rem;
-    border-bottom: 1px solid var(--rule);
+    padding: var(--space-075);
+    border-bottom: var(--border-width) solid var(--rule);
     text-align: left
 }
 
 pre {
     background: var(--ink);
     color: var(--paper);
-    padding: 1rem;
-    border-radius: 8px;
+    padding: var(--space-1);
+    border-radius: var(--radius-small);
     overflow: auto
 }
 
@@ -171,22 +171,22 @@ code {
 }
 
 .related li {
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--rule)
+    padding: var(--space-1) 0;
+    border-bottom: var(--border-width) solid var(--rule)
 }
 
 .choice-grid {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    gap: var(--space-1);
 }
 
 .choice-grid a {
-    padding: 1rem 1.2rem;
-    border-radius: 8px;
-    margin: 2rem 0;
-    transition: background var(--transition), transform 300ms ease;
+    padding: var(--space-1) var(--space-12);
+    border-radius: var(--radius-small);
+    margin: var(--space-2) 0;
+    transition: background var(--transition), transform var(--motion-fast) ease;
     text-decoration: none
 }
 
