@@ -10,7 +10,7 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: "Work Sans", sans-serif;
+  font-family: var(--font-sans);
   transition:
     background var(--transition),
     color var(--transition);
@@ -23,11 +23,11 @@ a {
 }
 
 .serif {
-  font-family: "Fraunces", serif;
+  font-family: var(--font-serif);
 }
 
 .mono {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
 }
 
 :focus-visible {
@@ -42,88 +42,6 @@ a {
 }
 
 /* =====================================================================
-   HEADER
-   ===================================================================== */
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 3rem 1.5rem;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.brand {
-  font-family: "Fraunces", serif;
-  font-weight: 500;
-  font-size: 1.35rem;
-  letter-spacing: -0.01em;
-}
-
-nav {
-  display: flex;
-  gap: 2rem;
-  font-size: 0.9rem;
-  color: var(--ink-soft);
-}
-
-nav a {
-  position: relative;
-  transition: color var(--transition);
-}
-
-nav a:hover {
-  color: var(--blush-rose);
-}
-
-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 1px;
-  background: var(--blush-rose);
-  transition: width var(--transition);
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-.header-right {
-  display: flex;
-  align-items: center;
-  gap: 1.75rem;
-}
-
-.theme-toggle {
-  width: 38px;
-  height: 38px;
-  border-radius: 50%;
-  border: 1px solid var(--rule);
-  background: var(--paper-raised);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition:
-    background var(--transition),
-    transform 300ms ease;
-}
-
-.theme-toggle:hover {
-  transform: rotate(20deg);
-}
-
-.theme-toggle svg {
-  width: 16px;
-  height: 16px;
-  stroke: var(--ink);
-}
-
-/* =====================================================================
    HERO
    ===================================================================== */
 
@@ -134,7 +52,7 @@ nav a:hover::after {
 }
 
 .eyebrow {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -153,7 +71,7 @@ nav a:hover::after {
 }
 
 .hero h1 {
-  font-family: "Fraunces", serif;
+  font-family: var(--font-serif);
   font-weight: 400;
   font-size: 3rem;
   line-height: 1.15;
@@ -229,7 +147,7 @@ nav a:hover::after {
 }
 
 .diary-title h2 {
-  font-family: "Fraunces", serif;
+  font-family: var(--font-serif);
   font-style: italic;
   font-weight: 500;
   font-size: 1.6rem;
@@ -238,7 +156,7 @@ nav a:hover::after {
 }
 
 .diary-open {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.72rem;
   letter-spacing: 0.04em;
   color: var(--ink-soft);
@@ -293,14 +211,14 @@ nav a:hover::after {
 }
 
 .entry-date {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--ink-soft);
   padding-top: 0.2rem;
 }
 
 .entry-body h3 {
-  font-family: "Fraunces", serif;
+  font-family: var(--font-serif);
   font-weight: 500;
   font-size: 1.1rem;
   margin: 0 0 0.3rem;
@@ -359,60 +277,4 @@ nav a:hover::after {
 
 .diary[data-cat="personal"] .entry {
   --accent: var(--olive-gold);
-}
-
-/* =====================================================================
-   FOOTER
-   ===================================================================== */
-
-footer {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 2rem 3rem 3rem;
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.82rem;
-  color: var(--ink-soft);
-  border-top: 1px solid var(--rule);
-}
-
-footer .links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-footer a:hover {
-  color: var(--deep-ocean);
-}
-
-/* =====================================================================
-   RESPONSIVE
-   ===================================================================== */
-
-@media (max-width: 680px) {
-
-  header,
-  .hero,
-  .diaries,
-  footer {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-
-  nav {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 2.1rem;
-  }
-
-  .diary {
-    gap: 1.25rem;
-  }
-
-  .entry {
-    grid-template-columns: 1fr;
-    gap: 0.25rem;
-  }
 }

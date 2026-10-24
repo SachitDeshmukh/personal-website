@@ -2,7 +2,7 @@
    THEME TOGGLE
    Clicking the circular button in the header switches between
    light and dark mode by toggling a "dark" class on <html>.
-   All colors respond automatically via the CSS variables in style.css.
+   All colors respond automatically via the CSS variables in index.css.
    ===================================================================== */
 
 const themeToggle = document.getElementById("themeToggle");
