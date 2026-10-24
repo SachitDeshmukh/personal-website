@@ -19,15 +19,14 @@
 
     /* -- Diary accent colors (one per category) -- */
     --deep-ocean: #04726D;
-    /* Writing */
+    /* Creative */
     --sky-blue-light: #2D8495;
-    /* Code */
+    /* Technical */
     --ash-grey: #4E6A5A;
-    /* Research */
     --blush-rose: #E4255A;
-    /* Articles */
+    /* Professional */
     --olive-gold: #7D8721;
-    /* Social */
+    /* Personal */
 
     /* -- Motion -- */
     --transition: 420ms cubic-bezier(0.22, 1, 0.36, 1);
@@ -341,19 +340,15 @@ code {
     --accent: var(--deep-ocean)
 }
 
-.article[data-cat="code"] {
+.article[data-cat="technical"] {
     --accent: var(--sky-blue-light)
 }
 
-.article[data-cat="research"] {
-    --accent: var(--ash-grey)
-}
-
-.article[data-cat="articles"] {
+.article[data-cat="professional"] {
     --accent: var(--blush-rose)
 }
 
-.article[data-cat="social"] {
+.article[data-cat="personal"] {
     --accent: var(--olive-gold)
 }
 
