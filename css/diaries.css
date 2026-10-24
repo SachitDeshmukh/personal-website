@@ -1,0 +1,645 @@
+/* =====================================================================
+  DIARIES STYLESHEET: one file for all four diary pages
+  ---------------------------------------------------------------------
+  TABLE OF CONTENTS (search for the [number] to jump to a section)
+  [01] Base & typography    page, body text, headings, links
+  [02] Accent per diary     which color each diary uses
+  [03] Motion               entrance animation, reduced-motion
+  [04] Creative             author's portfolio
+  [05] Technical            ledger
+  [06] Professional         resume
+  [07] Personal             handwritten diary
+===================================================================== */
+
+/* =====================================================================
+  [01] BASE & TYPOGRAPHY
+  Page defaults. Headings are Fraunces in the diary's accent color,
+  body text is Work Sans at a roomy 1.8 line height.
+  ===================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  --accent: var(--ash-grey);
+  /* fallback if a page has no diary class */
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.8;
+  transition: background var(--transition), color var(--transition);
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-serif);
+  color: var(--accent);
+}
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+/* Small uppercase section label, e.g. "FEATURED" */
+.label {
+  font: 500 .7rem var(--font-mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 1rem;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+
+/* =====================================================================
+  [02] ACCENT PER DIARY
+  Sets --accent for each diary. Works on <body class="creative"> or on
+  any element with data-cat="creative" (same hook your blog pages use).
+  To add a diary, add a line to both groups.
+  ===================================================================== */
+
+body.creative,
+[data-cat="creative"] {
+  --accent: var(--deep-ocean);
+}
+
+body.technical,
+[data-cat="technical"] {
+  --accent: var(--sky-blue-light);
+}
+
+body.professional,
+[data-cat="professional"] {
+  --accent: var(--blush-rose);
+}
+
+body.personal,
+[data-cat="personal"] {
+  --accent: var(--olive-gold);
+}
+
+
+/* =====================================================================
+  [03] MOTION
+  Children of .stagger fade up one after another on page load.
+  ===================================================================== */
+
+.stagger>* {
+  animation: rise 700ms var(--transition) both;
+}
+
+.stagger> :nth-child(2) {
+  animation-delay: 70ms;
+}
+
+.stagger> :nth-child(3) {
+  animation-delay: 140ms;
+}
+
+.stagger> :nth-child(4) {
+  animation-delay: 210ms;
+}
+
+.stagger> :nth-child(5) {
+  animation-delay: 280ms;
+}
+
+.stagger> :nth-child(n+6) {
+  animation-delay: 350ms;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+
+/* =====================================================================
+  [04] CREATIVE: AUTHOR'S PORTFOLIO
+  Sticky bio on the left; featured piece and selected works on the right.
+  ===================================================================== */
+
+.portfolio {
+  max-width: 1000px;
+  margin: 2rem auto 5rem;
+  padding: 0 3rem;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 4.5rem;
+}
+
+/* -- Author column (left) -- */
+.author {
+  position: sticky;
+  top: 2rem;
+  align-self: start;
+}
+
+.author h1 {
+  font: italic 500 2.1rem/1.15 var(--font-serif);
+  margin: 0 0 1rem;
+}
+
+.author p {
+  font-size: .92rem;
+  color: var(--ink-soft);
+  margin: 0 0 1.25rem;
+}
+
+.creative .meta {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  font-size: .75rem;
+  color: var(--ink-soft);
+}
+
+.creative .meta li {
+  padding: .4rem 0;
+  border-top: 1px solid var(--rule);
+}
+
+.creative .contact {
+  font-size: .75rem;
+  color: var(--accent);
+}
+
+/* -- Featured piece with pull quote -- */
+.featured {
+  padding-bottom: 2.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.featured h2 {
+  font: 400 2.4rem/1.15 var(--font-serif);
+  margin: 0 0 1.25rem;
+  letter-spacing: -.015em;
+}
+
+.featured a:hover {
+  color: var(--ink);
+}
+
+blockquote {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--accent);
+  font: italic 1.15rem/1.6 var(--font-serif);
+  color: var(--ink-soft);
+}
+
+.venue {
+  font-size: .85rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* -- Selected works list -- */
+.work {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1.5rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--rule);
+  transition: padding-left var(--transition);
+}
+
+.work:hover {
+  padding-left: .6rem;
+}
+
+.work h3 {
+  font: 500 1.25rem var(--font-serif);
+  color: var(--ink);
+  margin: 0 0 .25rem;
+  transition: color var(--transition);
+}
+
+.work:hover h3 {
+  color: var(--accent);
+}
+
+.work p {
+  margin: 0;
+  font-size: .88rem;
+  color: var(--ink-soft);
+  max-width: 430px;
+}
+
+.work span {
+  font-size: .72rem;
+  color: var(--ink-soft);
+  padding-top: .35rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .portfolio {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    padding: 0 1.5rem;
+  }
+
+  .author {
+    position: static;
+  }
+}
+
+
+/* =====================================================================
+  [05] TECHNICAL: LEDGER
+  Summary strip, then a ruled table with numbered rows and a double-rule
+  total at the bottom. Table rules are scoped to .technical so they don't
+  affect tables elsewhere (e.g. blog posts).
+  ===================================================================== */
+
+.ledger {
+  max-width: 1000px;
+  margin: 2rem auto 5rem;
+  padding: 0 3rem;
+}
+
+.ledger h1 {
+  font: 500 2.2rem var(--font-serif);
+  margin: 0 0 .5rem;
+  letter-spacing: -.01em;
+}
+
+.lede {
+  color: var(--ink-soft);
+  margin: 0 0 2rem;
+  max-width: 520px;
+}
+
+/* -- Summary strip: entries / repos / last posted -- */
+.summary {
+  display: flex;
+  border: 1px solid var(--rule);
+  margin-bottom: 2rem;
+  font-size: .7rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.summary div {
+  flex: 1;
+  padding: .9rem 1.1rem;
+  border-right: 1px solid var(--rule);
+}
+
+.summary div:last-child {
+  border: 0;
+}
+
+.summary b {
+  display: block;
+  font: 500 1.4rem var(--font-mono);
+  color: var(--accent);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* -- Ledger table -- */
+.scroll {
+  overflow-x: auto;
+}
+
+.technical table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .88rem;
+}
+
+.technical th {
+  font: 500 .68rem var(--font-mono);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: .7rem;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  color: var(--ink-soft);
+}
+
+.technical td {
+  padding: .9rem .7rem;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+.technical th+th,
+.technical td+td {
+  border-left: 1px solid var(--rule);
+}
+
+.technical tbody tr {
+  transition: background var(--transition);
+}
+
+.technical tbody tr:hover {
+  background: var(--paper-raised);
+}
+
+/* -- Cell types: entry number, date/stack, title, status -- */
+.num {
+  font: .78rem var(--font-mono);
+  color: var(--ink-soft);
+  width: 3.5rem;
+}
+
+.technical td.mono {
+  font-size: .78rem;
+  white-space: nowrap;
+}
+
+.title strong {
+  display: block;
+  font: 500 1rem var(--font-serif);
+  margin-bottom: .15rem;
+  transition: color var(--transition);
+}
+
+.title a {
+  color: var(--ink-soft);
+}
+
+tr:hover .title strong {
+  color: var(--accent);
+}
+
+.status {
+  color: var(--accent);
+}
+
+/* -- Footer row: "carried forward" total with double rule -- */
+.technical tfoot td {
+  border-top: 3px double var(--ink);
+  border-bottom: 0;
+  font: .78rem var(--font-mono);
+  color: var(--ink-soft);
+}
+
+@media (max-width: 680px) {
+  .ledger {
+    padding: 0 1.5rem;
+  }
+
+  .summary {
+    flex-direction: column;
+  }
+
+  .summary div {
+    border: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+}
+
+
+/* =====================================================================
+  [06] PROFESSIONAL: RESUME
+  One paper "sheet" on a slightly darker page. Section names sit in a
+  left column, content in a right column.
+  ===================================================================== */
+
+body.professional {
+  background: var(--paper-raised);
+}
+
+.sheet {
+  max-width: 800px;
+  margin: 1rem auto 4rem;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  padding: 3.5rem 4rem;
+}
+
+/* -- Name block -- */
+.sheet-head {
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--ink);
+  margin-bottom: .5rem;
+}
+
+.sheet-head h1 {
+  font: 500 2.3rem var(--font-serif);
+  margin: 0;
+  letter-spacing: -.015em;
+}
+
+.professional .role {
+  color: var(--accent);
+  margin: .25rem 0 .75rem;
+  font-weight: 500;
+}
+
+.professional .contact {
+  font-size: .75rem;
+  color: var(--ink-soft);
+  margin: 0;
+}
+
+/* -- Resume sections (label left, content right) -- */
+.r {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 1.5rem;
+  padding: 1.6rem 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.r:last-child {
+  border: 0;
+  padding-bottom: 0;
+}
+
+.r h2 {
+  font: 500 .7rem var(--font-mono);
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: .3rem 0 0;
+}
+
+.r p {
+  margin: 0;
+  font-size: .93rem;
+  color: var(--ink-soft);
+}
+
+/* -- Individual entries: title + year, outlet, bullet points -- */
+.item {
+  margin-bottom: 1.4rem;
+}
+
+.item:last-child {
+  margin: 0;
+}
+
+.item-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.item-head strong {
+  font: 500 1.05rem var(--font-serif);
+  transition: color var(--transition);
+}
+
+.item-head a:hover strong {
+  color: var(--accent);
+}
+
+.item-head span {
+  font-size: .72rem;
+  color: var(--ink-soft);
+  white-space: nowrap;
+}
+
+.org {
+  font-style: italic;
+  margin: .1rem 0 .4rem !important;
+}
+
+.item ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: .88rem;
+  color: var(--ink-soft);
+}
+
+.item li {
+  margin-bottom: .2rem;
+}
+
+.item li::marker {
+  color: var(--accent);
+}
+
+@media (max-width: 680px) {
+  .sheet {
+    padding: 2rem 1.5rem;
+    margin: 0 .75rem 3rem;
+  }
+
+  .r {
+    grid-template-columns: 1fr;
+    gap: .5rem;
+  }
+}
+
+
+/* =====================================================================
+  [07] PERSONAL: HANDWRITTEN DIARY
+  Ruled notebook page with a margin line, set in Caveat.
+  Every block height is a multiple of 32px so text sits on the ruled lines.
+  If you change the 32px line height, change it everywhere in this section.
+  ===================================================================== */
+
+.notebook {
+  max-width: 720px;
+  margin: 1rem auto 5rem;
+  padding: 0 1rem;
+}
+
+.notebook>.label {
+  padding-left: 5rem;
+}
+
+/* -- The page: ruled-line background + margin line -- */
+.page {
+  position: relative;
+  border: 1px solid var(--rule);
+  padding: 32px 2rem 0 5rem;
+  background:
+    repeating-linear-gradient(to bottom, transparent 0, transparent 31px, var(--rule) 31px, var(--rule) 32px),
+    var(--paper);
+  font: 400 1.4rem/32px var(--font-hand);
+  color: var(--ink);
+}
+
+.page::before {
+  content: '';
+  position: absolute;
+  left: 3.6rem;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--accent);
+  opacity: .7;
+}
+
+/* -- One diary entry: date, title, text, mood -- */
+.personal .entry {
+  display: block;
+}
+
+.personal .entry p {
+  margin: 0 0 32px;
+}
+
+.personal .entry .date {
+  font: 700 1.9rem/32px var(--font-serif);
+  color: var(--accent);
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.personal .entry h2 {
+  font: 700 1.9rem/32px var(--font-serif);
+  color: var(--ink);
+  margin: 0 0 32px;
+  transform-origin: left;
+  transition: transform var(--transition), color var(--transition);
+}
+
+.personal .entry:hover h2 {
+  transform: rotate(-1deg);
+  color: var(--accent);
+}
+
+.personal .entry .mood {
+  color: var(--ink-soft);
+  font-size: 1.15rem;
+}
+
+/* -- "Turn to earlier pages" link -- */
+.more {
+  margin: 0;
+  padding-bottom: 32px;
+  color: var(--ink-soft);
+}
+
+.more a {
+  color: var(--accent);
+  border-bottom: 1px dashed var(--accent);
+}
