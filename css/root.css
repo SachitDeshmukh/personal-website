@@ -122,7 +122,7 @@
     --font-size-5xl: 3rem;
     --line-height-tight: 1.1;
     --line-height-single: 1;
-    --line-height-copy: 1.8;
+    --line-height: 1.8;
     --line-height-heading: 1.15;
     --line-height-reading: 1.7;
     --line-height-relaxed: 1.55;
@@ -226,6 +226,7 @@ nav {
 
 nav a {
     position: relative;
+    line-height: normal;
     transition: color var(--transition);
 }
 
@@ -269,6 +270,20 @@ nav a:hover::after {
     width: var(--icon-size);
     height: var(--icon-size);
     stroke: var(--ink);
+}
+
+.brand {
+    font-family: var(--font-serif);
+    font-weight: var(--weight-medium);
+    font-size: var(--font-size-brand);
+    letter-spacing: var(--letter-spacing-very-tight);
+}
+
+.meta {
+    display: flex;
+    gap: var(--space-075);
+    font-family: var(--font-mono);
+    font-size: var(--font-size-caption)
 }
 
 /* =====================================================================

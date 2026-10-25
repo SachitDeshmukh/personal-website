@@ -28,7 +28,6 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-sans);
-  line-height: var(--line-height-copy);
   transition: background var(--transition), color var(--transition);
   -webkit-font-smoothing: antialiased;
 }

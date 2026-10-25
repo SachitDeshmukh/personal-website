@@ -11,7 +11,6 @@ body {
     background: var(--paper);
     color: var(--ink);
     font-family: var(--font-sans);
-    line-height: var(--line-height-copy)
 }
 
 a {
@@ -45,13 +44,6 @@ p.citation a {
     padding: var(--space-2)
 }
 
-.brand {
-    font-family: var(--font-serif);
-    font-weight: var(--weight-medium);
-    font-size: var(--font-size-brand);
-    letter-spacing: var(--letter-spacing-very-tight);
-}
-
 h1,
 h2,
 h3 {
@@ -70,13 +62,6 @@ h1 {
 .breadcrumb,
 .citation {
     color: var(--ink-soft)
-}
-
-.meta {
-    display: flex;
-    gap: var(--space-075);
-    font-family: var(--font-mono);
-    font-size: var(--font-size-caption)
 }
 
 hr {
