@@ -46,6 +46,7 @@ A small static-site build repository that converts minimal per-page source files
   - style_sheet from the first `<link>` tag
   - main_body from `<main>`
 - Output file names drop the numeric prefix set by SRC_PREFIX (see scripts/build.py).
+- Header navigation URLs are generated relative to each output page, so they work from the homepage, diary pages, and nested entries.
 
 ## Adding / editing pages
 
