@@ -16,7 +16,7 @@ OUTPUT_DIR = REPO_ROOT / "dist"
 BASE_TEMPLATE = "base.html"
 STATIC_DIRS = ["css", "js", "resources"]  # copied into dist/ as-is
 
-PAGE = "pages"
+PAGE = "diaries"
 NAV_TARGETS = {
     "creative": Path(f"{PAGE}/creative/creative-index.html"),
     "technical": Path(f"{PAGE}/technical/technical-index.html"),
