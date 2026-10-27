@@ -41,7 +41,8 @@ p.citation a {
 .article {
     max-width: var(--content-width-article);
     margin: auto;
-    padding: var(--space-2)
+    padding: var(--space-2);
+    line-height: var(--line-height);
 }
 
 h1,
@@ -74,7 +75,8 @@ hr {
     border-left: var(--border-width-accent) solid var(--accent, var(--ash-grey));
     padding-left: var(--space-15);
     font-style: italic;
-    margin: var(--space-2) 0
+    margin: var(--space-2) 0;
+    line-height: var(--line-height);
 }
 
 .article-quote footer {
@@ -91,7 +93,8 @@ hr {
     color: var(--paper-raised);
     padding: var(--space-1) var(--space-12);
     border-radius: var(--radius-small);
-    margin: var(--space-2) 0
+    margin: var(--space-2) 0;
+    line-height: var(--line-height);
 }
 
 .placeholder {
